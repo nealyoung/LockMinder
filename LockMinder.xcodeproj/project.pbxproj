@@ -17,6 +17,12 @@
 		0E71F58E1B74934F009060A0 /* ReminderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71F58D1B74934F009060A0 /* ReminderTableViewCell.swift */; };
 		0E71F5921B749C30009060A0 /* NYRoundRectButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E71F5911B749C30009060A0 /* NYRoundRectButton.m */; };
 		0E71F5951B749DE3009060A0 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71F5941B749DE3009060A0 /* UIColor.swift */; };
+		0E999EC41B786B9400925AA4 /* ImageGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E999EC31B786B9400925AA4 /* ImageGenerator.swift */; };
+		0E999EC61B787A6000925AA4 /* ImagePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E999EC51B787A6000925AA4 /* ImagePreviewViewController.swift */; };
+		0E999ECB1B78AD3800925AA4 /* SourceSansPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0E999EC81B78AD3800925AA4 /* SourceSansPro-Bold.otf */; };
+		0E999ECC1B78AD3800925AA4 /* SourceSansPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0E999EC91B78AD3800925AA4 /* SourceSansPro-Regular.otf */; };
+		0E999ECD1B78AD3800925AA4 /* SourceSansPro-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0E999ECA1B78AD3800925AA4 /* SourceSansPro-Semibold.otf */; };
+		0E999ECF1B78ADC600925AA4 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E999ECE1B78ADC600925AA4 /* UIFont.swift */; };
 		0EE204851B747D5E00355A6C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EE204841B747D5E00355A6C /* LaunchScreen.xib */; };
 		CF4696E613CC1537BB5A87AB /* Pods_LockMinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACEA458AA540B3881398426F /* Pods_LockMinder.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
@@ -58,6 +64,12 @@
 		0E71F5911B749C30009060A0 /* NYRoundRectButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYRoundRectButton.m; sourceTree = "<group>"; };
 		0E71F5941B749DE3009060A0 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		0E769BE21B7846CF00D17287 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reveal.framework; path = LockMinder/Reveal.framework; sourceTree = "<group>"; };
+		0E999EC31B786B9400925AA4 /* ImageGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageGenerator.swift; sourceTree = "<group>"; };
+		0E999EC51B787A6000925AA4 /* ImagePreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePreviewViewController.swift; sourceTree = "<group>"; };
+		0E999EC81B78AD3800925AA4 /* SourceSansPro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Bold.otf"; sourceTree = "<group>"; };
+		0E999EC91B78AD3800925AA4 /* SourceSansPro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Regular.otf"; sourceTree = "<group>"; };
+		0E999ECA1B78AD3800925AA4 /* SourceSansPro-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Semibold.otf"; sourceTree = "<group>"; };
+		0E999ECE1B78ADC600925AA4 /* UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		0EE204841B747D5E00355A6C /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		919EF39EBC215CD5DE7F44BB /* Pods-LockMinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LockMinder.release.xcconfig"; path = "Pods/Target Support Files/Pods-LockMinder/Pods-LockMinder.release.xcconfig"; sourceTree = "<group>"; };
 		A1E692CD93E81D05CB484F80 /* Pods-LockMinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LockMinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LockMinder/Pods-LockMinder.debug.xcconfig"; sourceTree = "<group>"; };
@@ -118,9 +130,13 @@
 			children = (
 				0E1DD5FA1B7469A40028095E /* AppDelegate.swift */,
 				0E1DD5FC1B7469A40028095E /* ReminderSelectionViewController.swift */,
+				0E999EC51B787A6000925AA4 /* ImagePreviewViewController.swift */,
+				0E999EC31B786B9400925AA4 /* ImageGenerator.swift */,
 				0E71F58B1B749330009060A0 /* CheckmarkView.swift */,
 				0E71F58D1B74934F009060A0 /* ReminderTableViewCell.swift */,
 				0E71F5941B749DE3009060A0 /* UIColor.swift */,
+				0E999ECE1B78ADC600925AA4 /* UIFont.swift */,
+				0E999EC71B78AD3800925AA4 /* Fonts */,
 				0E71F5931B749C36009060A0 /* Vendor */,
 				0EE204841B747D5E00355A6C /* LaunchScreen.xib */,
 				0E1DD6011B7469A40028095E /* Assets.xcassets */,
@@ -155,6 +171,16 @@
 				0E71F5911B749C30009060A0 /* NYRoundRectButton.m */,
 			);
 			name = Vendor;
+			sourceTree = "<group>";
+		};
+		0E999EC71B78AD3800925AA4 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				0E999EC81B78AD3800925AA4 /* SourceSansPro-Bold.otf */,
+				0E999EC91B78AD3800925AA4 /* SourceSansPro-Regular.otf */,
+				0E999ECA1B78AD3800925AA4 /* SourceSansPro-Semibold.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		3EC05CF666DED2643AC11498 /* Pods */ = {
@@ -284,7 +310,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EE204851B747D5E00355A6C /* LaunchScreen.xib in Resources */,
+				0E999ECB1B78AD3800925AA4 /* SourceSansPro-Bold.otf in Resources */,
+				0E999ECC1B78AD3800925AA4 /* SourceSansPro-Regular.otf in Resources */,
 				0E1DD6021B7469A40028095E /* Assets.xcassets in Resources */,
+				0E999ECD1B78AD3800925AA4 /* SourceSansPro-Semibold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,9 +389,12 @@
 				0E1DD5FD1B7469A40028095E /* ReminderSelectionViewController.swift in Sources */,
 				0E71F5951B749DE3009060A0 /* UIColor.swift in Sources */,
 				0E71F58C1B749330009060A0 /* CheckmarkView.swift in Sources */,
+				0E999EC41B786B9400925AA4 /* ImageGenerator.swift in Sources */,
 				0E1DD5FB1B7469A40028095E /* AppDelegate.swift in Sources */,
 				0E71F5921B749C30009060A0 /* NYRoundRectButton.m in Sources */,
+				0E999EC61B787A6000925AA4 /* ImagePreviewViewController.swift in Sources */,
 				0E71F58E1B74934F009060A0 /* ReminderTableViewCell.swift in Sources */,
+				0E999ECF1B78ADC600925AA4 /* UIFont.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,6 +551,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "LockMinder/LockMinder-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -541,6 +574,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "LockMinder/LockMinder-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -32,13 +32,14 @@ class ReminderTableViewCell: UITableViewCell {
         self.contentView.addSubview(self.checkmarkView)
         
         self.reminderLabel = UILabel()
+        self.reminderLabel.font = UIFont.applicationFont(17.0)
         self.reminderLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
         self.contentView.addSubview(self.reminderLabel)
         
         self.checkmarkView.snp_makeConstraints { (make) -> Void in
-            make.top.equalTo(self.contentView.snp_topMargin).offset(-2.0)
+            make.top.equalTo(self.contentView.snp_topMargin).offset(-4.0)
             make.leading.equalTo(self.contentView.snp_leadingMargin)
-            make.bottom.equalTo(self.contentView.snp_bottomMargin).offset(2.0)
+            make.bottom.equalTo(self.contentView.snp_bottomMargin).offset(4.0)
             
             make.width.equalTo(self.checkmarkView.snp_height)
         }

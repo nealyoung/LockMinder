@@ -36,10 +36,10 @@ class CheckmarkView: UIView {
         
         CGContextAddPath(ctx, borderPath.CGPath);
         CGContextSetStrokeColorWithColor(ctx, UIColor.whiteColor().CGColor);
-        CGContextSetShadowWithColor(ctx, CGSizeZero, 5.0, UIColor.grayColor().CGColor);
+        CGContextSetShadowWithColor(ctx, CGSizeZero, 4.0, UIColor.grayColor().CGColor);
         CGContextStrokePath(ctx);
         
-        CGContextSetShadowWithColor(ctx, CGSizeZero, 5.0, nil);
+        CGContextSetShadowWithColor(ctx, CGSizeZero, 4.0, nil);
 
         
         if (self.selected) {
@@ -84,43 +84,5 @@ class CheckmarkView: UIView {
                 )
             }
         )
-        
-//        UIView.animateWithDuration(
-//            2.0,
-//            delay: 0.0,
-//            usingSpringWithDamping: 0.2,
-//            initialSpringVelocity: 0.0,
-//            options: .Autoreverse,
-//            animations: { () -> Void in
-//                self.transform = CGAffineTransformMakeScale(scale, scale)
-//            },
-//            completion: { (completed: Bool) -> Void in
-//                self.transform = CGAffineTransformIdentity
-//            }
-//        )
-        
-//        UIView.animateWithDuration(
-//            2.0,
-//            delay: 0.0,
-//            usingSpringWithDamping: 0.2,
-//            initialSpringVelocity: 0.0,
-//            options: nil,
-//            animations: { () -> Void in
-//                self.transform = CGAffineTransformMakeScale(scale, scale)
-//            },
-//            completion: { (completed: Bool) -> Void in
-//                UIView.animateWithDuration(
-//                    0.5,
-//                    delay: 0.0,
-//                    usingSpringWithDamping: 0.2,
-//                    initialSpringVelocity: 0.0,
-//                    options: nil,
-//                    animations: { () -> Void in
-//                        self.transform = CGAffineTransformIdentity
-//                    },
-//                    completion: nil
-//                )
-//            }
-//        )
     }
 }

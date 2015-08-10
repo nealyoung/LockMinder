@@ -63,6 +63,7 @@ class ReminderSelectionViewController: UIViewController, UITableViewDataSource, 
         self.previewButton = NYRoundRectButton()
         self.previewButton.setTranslatesAutoresizingMaskIntoConstraints(false)
         self.previewButton.addTarget(self, action: "previewButtonPressed", forControlEvents: .TouchUpInside)
+        self.previewButton.titleLabel?.font = UIFont.mediumApplicationFont(18.0)
         self.previewButton.setTitle(NSLocalizedString("Preview Wallpaper", comment: ""), forState: .Normal)
         previewButtonBackgroundView.addSubview(self.previewButton)
         
@@ -73,7 +74,7 @@ class ReminderSelectionViewController: UIViewController, UITableViewDataSource, 
         }
         
         previewButtonBackgroundView.snp_makeConstraints { (make) -> Void in
-            make.height.equalTo(72)
+            make.height.equalTo(68)
             
             make.top.equalTo(self.tableView.snp_bottom)
             make.leading.equalTo(self.view)
@@ -97,21 +98,31 @@ class ReminderSelectionViewController: UIViewController, UITableViewDataSource, 
     }
     
     func previewButtonPressed() {
-        let alertViewController = NYAlertViewController()
-        alertViewController.title = NSLocalizedString("No Reminders Selected", comment: "")
-        alertViewController.message = NSLocalizedString("Select at least one reminder to generate a wallpaper", comment: "")
-        alertViewController.cancelButtonColor = .purpleApplicationColor()
-        let action = NYAlertAction(
-            title: "Done",
-            style: .Cancel,
-            handler: { (action: NYAlertAction!) -> Void in
-                self.dismissViewControllerAnimated(true, completion: nil)
-            }
-        )
-        
-        alertViewController.addAction(action)
-        
-        self.presentViewController(alertViewController, animated: true, completion: nil)
+        if (self.selectedReminders.count == 0) {
+            let alertViewController = NYAlertViewController()
+            alertViewController.title = NSLocalizedString("No Reminders Selected", comment: "")
+            alertViewController.message = NSLocalizedString("Select at least one reminder to generate a wallpaper", comment: "")
+            alertViewController.cancelButtonColor = .purpleApplicationColor()
+            alertViewController.swipeDismissalGestureEnabled = true
+            alertViewController.backgroundTapDismissalGestureEnabled = true
+            let action = NYAlertAction(
+                title: "Done",
+                style: .Cancel,
+                handler: { (action: NYAlertAction!) -> Void in
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                }
+            )
+            
+            alertViewController.addAction(action)
+            
+            self.presentViewController(alertViewController, animated: true, completion: nil)
+        } else {
+            let image = ImageGenerator.generateImage(UIImage(), reminders: Array(selectedReminders))
+            let previewViewController = ImagePreviewViewController()
+            previewViewController.image = image
+            
+            self.presentViewController(previewViewController, animated: true, completion: nil)
+        }
     }
     
     private func createSampleReminders() {
@@ -179,10 +190,14 @@ class ReminderSelectionViewController: UIViewController, UITableViewDataSource, 
     
     // MARK: UITableViewDelegate
     
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 48.0
+    }
+    
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerLabel = UILabel()
         headerLabel.textColor = UIColor(white: 0.16, alpha: 1.0)
-        headerLabel.font = .systemFontOfSize(15.0)
+        headerLabel.font = UIFont.applicationFont(15.0)
         headerLabel.textAlignment = .Center
         
         if (self.reminders.count > 0) {

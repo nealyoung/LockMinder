@@ -31,7 +31,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func customizeAppearance() {
         self.window?.tintColor = UIColor.purpleApplicationColor()
         
-        let navigationBarTitleTextAttributes = [ NSForegroundColorAttributeName: UIColor.whiteColor() ]
+        let navigationBarTitleTextAttributes = [
+            NSForegroundColorAttributeName: UIColor.whiteColor(),
+            NSFontAttributeName: UIFont.mediumApplicationFont(19.0)
+        ]
+        
         UINavigationBar.appearance().translucent = false
         UINavigationBar.appearance().titleTextAttributes = navigationBarTitleTextAttributes
 //        UINavigationBar.appearance().tintColor = .whiteColor()
