@@ -2,8 +2,8 @@ FRAMEWORK_SEARCH_PATHS = "$(PODS_ROOT)/Reveal-iOS-SDK/Reveal-Framework-1.5.1"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Reveal-iOS-SDK" "${PODS_ROOT}/Headers/Public/Reveal-iOS-SDK/Reveal"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "$CONFIGURATION_BUILD_DIR/SnapKit.framework/Headers" -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/Reveal-iOS-SDK" -isystem "${PODS_ROOT}/Headers/Public/Reveal-iOS-SDK/Reveal"
-OTHER_LDFLAGS = $(inherited) -l"z" -framework "CFNetwork" -framework "CoreGraphics" -framework "QuartzCore" -framework "Reveal" -framework "SnapKit"
+OTHER_CFLAGS = $(inherited) -iquote "$CONFIGURATION_BUILD_DIR/NYAlertViewController.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/SnapKit.framework/Headers" -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/Reveal-iOS-SDK" -isystem "${PODS_ROOT}/Headers/Public/Reveal-iOS-SDK/Reveal"
+OTHER_LDFLAGS = $(inherited) -l"z" -framework "CFNetwork" -framework "CoreGraphics" -framework "NYAlertViewController" -framework "QuartzCore" -framework "Reveal" -framework "SnapKit"
 OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
 PODS_FRAMEWORK_BUILD_PATH = $(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Pods-LockMinder
 PODS_ROOT = ${SRCROOT}/Pods

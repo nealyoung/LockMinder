@@ -3,3 +3,4 @@
 //
 
 #import "NYRoundRectButton.h"
+#import <NYAlertViewController/NYAlertViewController.h>

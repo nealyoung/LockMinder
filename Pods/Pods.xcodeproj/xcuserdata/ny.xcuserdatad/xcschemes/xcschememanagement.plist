@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>NYAlertViewController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-LockMinder.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>104EAC229EFAD431BF1856C208D128F0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>4EDA452517A913B556C7860F490D5FD3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CB54B616574439E00D896ACC03E04E7D</key>
+		<key>B2C02152AFBC1B76D9665FCCFC7BEA60</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -7,8 +7,9 @@
 //
 
 import EventKit
-import UIKit
+import NYAlertViewController
 import SnapKit
+import UIKit
 
 class ReminderSelectionViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     let ReminderCellIdentifier = "ReminderCellIdentifier"
@@ -61,6 +62,8 @@ class ReminderSelectionViewController: UIViewController, UITableViewDataSource, 
         
         self.previewButton = NYRoundRectButton()
         self.previewButton.setTranslatesAutoresizingMaskIntoConstraints(false)
+        self.previewButton.addTarget(self, action: "previewButtonPressed", forControlEvents: .TouchUpInside)
+        self.previewButton.setTitle(NSLocalizedString("Preview Wallpaper", comment: ""), forState: .Normal)
         previewButtonBackgroundView.addSubview(self.previewButton)
         
         self.tableView.snp_makeConstraints { (make) -> Void in
@@ -70,7 +73,7 @@ class ReminderSelectionViewController: UIViewController, UITableViewDataSource, 
         }
         
         previewButtonBackgroundView.snp_makeConstraints { (make) -> Void in
-            make.height.equalTo(80)
+            make.height.equalTo(72)
             
             make.top.equalTo(self.tableView.snp_bottom)
             make.leading.equalTo(self.view)
@@ -93,8 +96,22 @@ class ReminderSelectionViewController: UIViewController, UITableViewDataSource, 
         importReminders()
     }
     
-    private func previewButtonPressed() {
+    func previewButtonPressed() {
+        let alertViewController = NYAlertViewController()
+        alertViewController.title = NSLocalizedString("No Reminders Selected", comment: "")
+        alertViewController.message = NSLocalizedString("Select at least one reminder to generate a wallpaper", comment: "")
+        alertViewController.cancelButtonColor = .purpleApplicationColor()
+        let action = NYAlertAction(
+            title: "Done",
+            style: .Cancel,
+            handler: { (action: NYAlertAction!) -> Void in
+                self.dismissViewControllerAnimated(true, completion: nil)
+            }
+        )
         
+        alertViewController.addAction(action)
+        
+        self.presentViewController(alertViewController, animated: true, completion: nil)
     }
     
     private func createSampleReminders() {
@@ -161,6 +178,25 @@ class ReminderSelectionViewController: UIViewController, UITableViewDataSource, 
     }
     
     // MARK: UITableViewDelegate
+    
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerLabel = UILabel()
+        headerLabel.textColor = UIColor(white: 0.16, alpha: 1.0)
+        headerLabel.font = .systemFontOfSize(15.0)
+        headerLabel.textAlignment = .Center
+        
+        if (self.reminders.count > 0) {
+            headerLabel.text = NSLocalizedString("Select reminders to appear on your wallpaper", comment: "")
+        } else {
+            headerLabel.text = NSLocalizedString("No reminders", comment: "")
+        }
+        
+        return headerLabel
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 44.0
+    }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let selectedReminder = self.reminders[indexPath.row]

@@ -1,12 +1,15 @@
 PODS:
+  - NYAlertViewController (1.0.2)
   - Reveal-iOS-SDK (1.5.1)
   - SnapKit (0.13.0)
 
 DEPENDENCIES:
+  - NYAlertViewController
   - Reveal-iOS-SDK
   - SnapKit
 
 SPEC CHECKSUMS:
+  NYAlertViewController: cd7b5d2fdfc3ff45a673d2406ffb31b1361ea7dd
   Reveal-iOS-SDK: c9c55cad2729c85f6ced415f1b21857c9a2d8ef9
   SnapKit: 69fe274c71511df89a5591c11437a8b826bfa9eb
 

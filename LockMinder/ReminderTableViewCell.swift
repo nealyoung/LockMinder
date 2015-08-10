@@ -1,9 +1,9 @@
 //
 //  ReminderTableViewCell.swift
-//  
+//  LockMinder
 //
 //  Created by Nealon Young on 8/7/15.
-//
+//  Copyright © 2015 Nealon Young. All rights reserved.
 //
 
 import UIKit
