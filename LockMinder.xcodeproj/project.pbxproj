@@ -8,12 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		0E1DD5FB1B7469A40028095E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1DD5FA1B7469A40028095E /* AppDelegate.swift */; };
-		0E1DD5FD1B7469A40028095E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1DD5FC1B7469A40028095E /* ViewController.swift */; };
-		0E1DD6001B7469A40028095E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E1DD5FE1B7469A40028095E /* Main.storyboard */; };
+		0E1DD5FD1B7469A40028095E /* ReminderSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1DD5FC1B7469A40028095E /* ReminderSelectionViewController.swift */; };
 		0E1DD6021B7469A40028095E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E1DD6011B7469A40028095E /* Assets.xcassets */; };
-		0E1DD6051B7469A40028095E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E1DD6031B7469A40028095E /* LaunchScreen.storyboard */; };
 		0E1DD6101B7469A40028095E /* LockMinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1DD60F1B7469A40028095E /* LockMinderTests.swift */; };
 		0E1DD61B1B7469A40028095E /* LockMinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1DD61A1B7469A40028095E /* LockMinderUITests.swift */; };
+		0E71F58A1B748C89009060A0 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E71F5891B748C88009060A0 /* EventKit.framework */; };
+		0E71F58C1B749330009060A0 /* CheckmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71F58B1B749330009060A0 /* CheckmarkView.swift */; };
+		0E71F58E1B74934F009060A0 /* ReminderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71F58D1B74934F009060A0 /* ReminderTableViewCell.swift */; };
+		0E71F5921B749C30009060A0 /* NYRoundRectButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E71F5911B749C30009060A0 /* NYRoundRectButton.m */; };
+		0E71F5951B749DE3009060A0 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71F5941B749DE3009060A0 /* UIColor.swift */; };
+		0EE204851B747D5E00355A6C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EE204841B747D5E00355A6C /* LaunchScreen.xib */; };
+		CF4696E613CC1537BB5A87AB /* Pods_LockMinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACEA458AA540B3881398426F /* Pods_LockMinder.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,10 +41,8 @@
 /* Begin PBXFileReference section */
 		0E1DD5F71B7469A40028095E /* LockMinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LockMinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E1DD5FA1B7469A40028095E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0E1DD5FC1B7469A40028095E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0E1DD5FF1B7469A40028095E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0E1DD5FC1B7469A40028095E /* ReminderSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderSelectionViewController.swift; sourceTree = "<group>"; };
 		0E1DD6011B7469A40028095E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0E1DD6041B7469A40028095E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E1DD6061B7469A40028095E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E1DD60B1B7469A40028095E /* LockMinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LockMinderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E1DD60F1B7469A40028095E /* LockMinderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockMinderTests.swift; sourceTree = "<group>"; };
@@ -47,6 +50,18 @@
 		0E1DD6161B7469A40028095E /* LockMinderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LockMinderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E1DD61A1B7469A40028095E /* LockMinderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockMinderUITests.swift; sourceTree = "<group>"; };
 		0E1DD61C1B7469A40028095E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E71F5891B748C88009060A0 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		0E71F58B1B749330009060A0 /* CheckmarkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckmarkView.swift; sourceTree = "<group>"; };
+		0E71F58D1B74934F009060A0 /* ReminderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderTableViewCell.swift; sourceTree = "<group>"; };
+		0E71F58F1B749C2F009060A0 /* LockMinder-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LockMinder-Bridging-Header.h"; sourceTree = "<group>"; };
+		0E71F5901B749C30009060A0 /* NYRoundRectButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYRoundRectButton.h; sourceTree = "<group>"; };
+		0E71F5911B749C30009060A0 /* NYRoundRectButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYRoundRectButton.m; sourceTree = "<group>"; };
+		0E71F5941B749DE3009060A0 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		0E769BE21B7846CF00D17287 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
+		0EE204841B747D5E00355A6C /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		919EF39EBC215CD5DE7F44BB /* Pods-LockMinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LockMinder.release.xcconfig"; path = "Pods/Target Support Files/Pods-LockMinder/Pods-LockMinder.release.xcconfig"; sourceTree = "<group>"; };
+		A1E692CD93E81D05CB484F80 /* Pods-LockMinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LockMinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LockMinder/Pods-LockMinder.debug.xcconfig"; sourceTree = "<group>"; };
+		ACEA458AA540B3881398426F /* Pods_LockMinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LockMinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +69,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E71F58A1B748C89009060A0 /* EventKit.framework in Frameworks */,
+				CF4696E613CC1537BB5A87AB /* Pods_LockMinder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +98,8 @@
 				0E1DD60E1B7469A40028095E /* LockMinderTests */,
 				0E1DD6191B7469A40028095E /* LockMinderUITests */,
 				0E1DD5F81B7469A40028095E /* Products */,
+				3EC05CF666DED2643AC11498 /* Pods */,
+				3FC3ACD6D408685EBF223DB9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,11 +117,15 @@
 			isa = PBXGroup;
 			children = (
 				0E1DD5FA1B7469A40028095E /* AppDelegate.swift */,
-				0E1DD5FC1B7469A40028095E /* ViewController.swift */,
-				0E1DD5FE1B7469A40028095E /* Main.storyboard */,
+				0E1DD5FC1B7469A40028095E /* ReminderSelectionViewController.swift */,
+				0E71F58B1B749330009060A0 /* CheckmarkView.swift */,
+				0E71F58D1B74934F009060A0 /* ReminderTableViewCell.swift */,
+				0E71F5941B749DE3009060A0 /* UIColor.swift */,
+				0E71F5931B749C36009060A0 /* Vendor */,
+				0EE204841B747D5E00355A6C /* LaunchScreen.xib */,
 				0E1DD6011B7469A40028095E /* Assets.xcassets */,
-				0E1DD6031B7469A40028095E /* LaunchScreen.storyboard */,
 				0E1DD6061B7469A40028095E /* Info.plist */,
+				0E71F58F1B749C2F009060A0 /* LockMinder-Bridging-Header.h */,
 			);
 			path = LockMinder;
 			sourceTree = "<group>";
@@ -125,6 +148,34 @@
 			path = LockMinderUITests;
 			sourceTree = "<group>";
 		};
+		0E71F5931B749C36009060A0 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				0E769BE21B7846CF00D17287 /* Reveal.framework */,
+				0E71F5901B749C30009060A0 /* NYRoundRectButton.h */,
+				0E71F5911B749C30009060A0 /* NYRoundRectButton.m */,
+			);
+			name = Vendor;
+			sourceTree = "<group>";
+		};
+		3EC05CF666DED2643AC11498 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A1E692CD93E81D05CB484F80 /* Pods-LockMinder.debug.xcconfig */,
+				919EF39EBC215CD5DE7F44BB /* Pods-LockMinder.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3FC3ACD6D408685EBF223DB9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0E71F5891B748C88009060A0 /* EventKit.framework */,
+				ACEA458AA540B3881398426F /* Pods_LockMinder.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +183,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0E1DD61F1B7469A40028095E /* Build configuration list for PBXNativeTarget "LockMinder" */;
 			buildPhases = (
+				3FA86B4C6D1787741D3E9E04 /* Check Pods Manifest.lock */,
 				0E1DD5F31B7469A40028095E /* Sources */,
 				0E1DD5F41B7469A40028095E /* Frameworks */,
 				0E1DD5F51B7469A40028095E /* Resources */,
+				EA0B8E3CCA51BDF8614EF767 /* Embed Pods Frameworks */,
+				66BDC1A11AA6EB43E21DBF29 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -192,6 +246,7 @@
 				TargetAttributes = {
 					0E1DD5F61B7469A40028095E = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = HFG3GB6CJM;
 					};
 					0E1DD60A1B7469A40028095E = {
 						CreatedOnToolsVersion = 7.0;
@@ -228,9 +283,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E1DD6051B7469A40028095E /* LaunchScreen.storyboard in Resources */,
+				0EE204851B747D5E00355A6C /* LaunchScreen.xib in Resources */,
 				0E1DD6021B7469A40028095E /* Assets.xcassets in Resources */,
-				0E1DD6001B7469A40028095E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,13 +304,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3FA86B4C6D1787741D3E9E04 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		66BDC1A11AA6EB43E21DBF29 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LockMinder/Pods-LockMinder-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA0B8E3CCA51BDF8614EF767 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LockMinder/Pods-LockMinder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0E1DD5F31B7469A40028095E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E1DD5FD1B7469A40028095E /* ViewController.swift in Sources */,
+				0E1DD5FD1B7469A40028095E /* ReminderSelectionViewController.swift in Sources */,
+				0E71F5951B749DE3009060A0 /* UIColor.swift in Sources */,
+				0E71F58C1B749330009060A0 /* CheckmarkView.swift in Sources */,
 				0E1DD5FB1B7469A40028095E /* AppDelegate.swift in Sources */,
+				0E71F5921B749C30009060A0 /* NYRoundRectButton.m in Sources */,
+				0E71F58E1B74934F009060A0 /* ReminderTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,25 +396,6 @@
 			targetProxy = 0E1DD6171B7469A40028095E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		0E1DD5FE1B7469A40028095E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0E1DD5FF1B7469A40028095E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		0E1DD6031B7469A40028095E /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0E1DD6041B7469A40028095E /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		0E1DD61D1B7469A40028095E /* Debug */ = {
@@ -396,23 +483,64 @@
 		};
 		0E1DD6201B7469A40028095E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1E692CD93E81D05CB484F80 /* Pods-LockMinder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LockMinder",
+				);
 				INFOPLIST_FILE = LockMinder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-l\"z\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Reveal\"",
+					"-framework",
+					"\"SnapKit\"",
+					"-ObjC",
+					"-lz",
+					"-framework",
+					Reveal,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nealonyoung.LockMinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "LockMinder/LockMinder-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		0E1DD6211B7469A40028095E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 919EF39EBC215CD5DE7F44BB /* Pods-LockMinder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LockMinder",
+				);
 				INFOPLIST_FILE = LockMinder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nealonyoung.LockMinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "LockMinder/LockMinder-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -483,6 +611,7 @@
 				0E1DD6211B7469A40028095E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0E1DD6221B7469A40028095E /* Build configuration list for PBXNativeTarget "LockMinderTests" */ = {
 			isa = XCConfigurationList;
@@ -491,6 +620,7 @@
 				0E1DD6241B7469A40028095E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0E1DD6251B7469A40028095E /* Build configuration list for PBXNativeTarget "LockMinderUITests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +629,7 @@
 				0E1DD6271B7469A40028095E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
