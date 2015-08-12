@@ -50,7 +50,7 @@
     
     self.layer.borderWidth = 1.0f;
     
-    self.cornerRadius = 4.0f;
+    self.cornerRadius = 6.0f;
     [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
 }

@@ -11,7 +11,11 @@ import UIKit
 class CheckmarkView: UIView {
     let Inset = 4.0
     
-    var selected: Bool
+    var selected: Bool {
+        didSet {
+            self.setNeedsDisplay()
+        }
+    }
     
     override init(frame: CGRect) {
         self.selected = false

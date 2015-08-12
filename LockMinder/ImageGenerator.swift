@@ -87,8 +87,6 @@ class ImageGenerator {
         var yOffset: CGFloat = 0.0
         
         for (index, reminder) in enumerate(reminders) {
-            println("Item \(index): \(reminder)")
-            
             // Draw the bullet point
             let itemBulletRect = CGRect(
                 x: CGRectGetMinX(listBackgroundRect) + ListItemXInset,
@@ -115,7 +113,6 @@ class ImageGenerator {
             reminderRect.origin = CGPointMake(CGRectGetMinX(listBackgroundRect) + ListItemXInset + (ItemBulletWidth * 2.0),
             CGRectGetMinY(listBackgroundRect) + ListItemXInset + yOffset);
             reminderRect.size.height += ListItemPadding * 2.0;
-            
             
             yOffset += CGRectGetHeight(reminderRect);
             

@@ -102,6 +102,9 @@ class ReminderSelectionViewController: UIViewController, UITableViewDataSource, 
             let alertViewController = NYAlertViewController()
             alertViewController.title = NSLocalizedString("No Reminders Selected", comment: "")
             alertViewController.message = NSLocalizedString("Select at least one reminder to generate a wallpaper", comment: "")
+            alertViewController.titleFont = .mediumApplicationFont(18.0)
+            alertViewController.messageFont = .applicationFont(17.0)
+            alertViewController.cancelButtonTitleFont = .mediumApplicationFont(18.0)
             alertViewController.cancelButtonColor = .purpleApplicationColor()
             alertViewController.swipeDismissalGestureEnabled = true
             alertViewController.backgroundTapDismissalGestureEnabled = true
@@ -159,20 +162,38 @@ class ReminderSelectionViewController: UIViewController, UITableViewDataSource, 
         
         self.eventStore.requestAccessToEntityType(EKEntityTypeReminder, completion: { (granted: Bool, error: NSError!) -> Void in
             if (!granted || error != nil) {
-                println("NOT GRANTED")
-                return
+                let alertViewController = NYAlertViewController()
+                alertViewController.title = NSLocalizedString("Reminder Access Declined", comment: "")
+                alertViewController.message = NSLocalizedString("Use the Settings app to allow LockMinder access to your reminders", comment: "")
+                alertViewController.titleFont = .mediumApplicationFont(17.0)
+                alertViewController.messageFont = .applicationFont(17.0)
+                alertViewController.cancelButtonColor = .purpleApplicationColor()
+                alertViewController.swipeDismissalGestureEnabled = true
+                alertViewController.backgroundTapDismissalGestureEnabled = true
+                let action = NYAlertAction(
+                    title: "Done",
+                    style: .Cancel,
+                    handler: { (action: NYAlertAction!) -> Void in
+                        self.dismissViewControllerAnimated(true, completion: nil)
+                    }
+                )
+                
+                alertViewController.addAction(action)
+                
+                self.presentViewController(alertViewController, animated: true, completion: nil)
+            } else {
+                var defaultRemindersCalendar = self.eventStore.defaultCalendarForNewReminders()
+                var completedRemindersPredicate = self.eventStore.predicateForCompletedRemindersWithCompletionDateStarting(nil, ending: nil, calendars: [defaultRemindersCalendar])
+                self.eventStore.fetchRemindersMatchingPredicate(completedRemindersPredicate, completion: { (reminders: [AnyObject]!) -> Void in
+                    if let reminders = reminders as? [EKReminder] {
+                        self.reminders = reminders
+                        
+                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                            self.tableView.reloadData()
+                        })
+                    }
+                })
             }
-            
-            var defaultRemindersCalendar = self.eventStore.defaultCalendarForNewReminders()
-            var completedRemindersPredicate = self.eventStore.predicateForCompletedRemindersWithCompletionDateStarting(nil, ending: nil, calendars: [defaultRemindersCalendar])
-            self.eventStore.fetchRemindersMatchingPredicate(completedRemindersPredicate, completion: { (reminders: [AnyObject]!) -> Void in
-                if let reminders = reminders as? [EKReminder] {
-                    self.reminders = reminders
-                    
-                    // Not sure if this block is called on the main thread...
-                    self.tableView.reloadData()
-                }
-            })
         })
     }
     
@@ -184,7 +205,11 @@ class ReminderSelectionViewController: UIViewController, UITableViewDataSource, 
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier(ReminderCellIdentifier, forIndexPath: indexPath) as! ReminderTableViewCell;
-        cell.reminderLabel.text = self.reminders[indexPath.row].title
+        
+        let reminder = self.reminders[indexPath.row]
+        
+        cell.checkmarkView.selected = self.selectedReminders.contains(reminder)
+        cell.reminderLabel.text = reminder.title
         return cell;
     }
     

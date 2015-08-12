@@ -80,44 +80,38 @@ class ImagePreviewViewController: UIViewController {
                     assetsLibrary.assetForURL(
                         url,
                         resultBlock: { (asset: ALAsset!) -> Void in
-                            var albumCreated = false
-                            
                             assetsLibrary.enumerateGroupsWithTypes(
                                 ALAssetsGroupAlbum,
                                 usingBlock: { (assetsGroup: ALAssetsGroup!, stop: UnsafeMutablePointer<ObjCBool>) -> Void in
-                                    // On the last iteration (when group is nil), we check if the album has been created
-                                    if (assetsGroup == nil && !albumCreated) {
+                                    // If we've gotten to the last iteration (when group is nil) we need to create the saved photos album
+                                    if (assetsGroup == nil) {
                                         assetsLibrary.addAssetsGroupAlbumWithName(
                                             self.savedPhotosAlbumName,
                                             resultBlock: { (assetsGroup: ALAssetsGroup!) -> Void in
+                                                assetsGroup?.addAsset(asset)
                                                 self.imageFinishedSaving(nil)
                                             },
                                             failureBlock: { (error: NSError!) -> Void in
                                                 self.imageFinishedSaving(error)
                                             }
                                         )
-                                        
-                                        return
                                     } else {
-                                        if let assetsGroup = assetsGroup {
-                                            let albumName = assetsGroup.valueForProperty(ALAssetsGroupPropertyName) as? String
-                                            if (albumName != nil)  {
-                                                if (albumName == self.savedPhotosAlbumName) {
-                                                    assetsGroup.addAsset(asset)
-                                                    stop.memory = true
-                                                    self.imageFinishedSaving(nil)
-                                                }
-                                            }
+                                        // Check if the album is the saved photos album by comparing their names
+                                        let albumName = assetsGroup.valueForProperty(ALAssetsGroupPropertyName) as? String
+                                        if (albumName == self.savedPhotosAlbumName) {
+                                            assetsGroup.addAsset(asset)
+                                            stop.memory = true
+                                            self.imageFinishedSaving(nil)
                                         }
                                     }
                                 },
                                 failureBlock: { (error: NSError!) -> Void in
-                                    
+                                    self.imageFinishedSaving(error)
                                 }
                             )
                         },
                         failureBlock: { (error: NSError!) -> Void in
-                            
+                            self.imageFinishedSaving(error)
                         }
                     )
                 }
@@ -127,26 +121,52 @@ class ImagePreviewViewController: UIViewController {
     
     private func imageFinishedSaving(error: NSError!) {
         if (error != nil) {
+            let alertViewController = NYAlertViewController()
+            alertViewController.title = NSLocalizedString("Error Saving Wallpaper", comment: "")
+            alertViewController.message = NSLocalizedString("You need to allow LockMinder to access your photos.", comment: "")
+            alertViewController.titleFont = .mediumApplicationFont(18.0)
+            alertViewController.messageFont = .applicationFont(17.0)
+            alertViewController.cancelButtonTitleFont = .mediumApplicationFont(18.0)
+            alertViewController.cancelButtonColor = .purpleApplicationColor()
+            alertViewController.swipeDismissalGestureEnabled = true
+            alertViewController.backgroundTapDismissalGestureEnabled = true
+
+            let cancelAlertAction = NYAlertAction(
+                title: NSLocalizedString("Ok", comment: ""),
+                style: .Cancel,
+                handler: { (action: NYAlertAction!) -> Void in
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                }
+            )
             
+            alertViewController.addAction(cancelAlertAction)
+            
+            self.presentViewController(alertViewController, animated: true, completion: nil)
         } else {
             if let presentingViewController = self.presentingViewController {
-                presentingViewController.dismissViewControllerAnimated(true, completion: nil)
-                
-                let alertViewController = NYAlertViewController()
-                alertViewController.title = NSLocalizedString("Wallpaper Saved", comment: "")
-                alertViewController.message = NSLocalizedString("Your wallpaper was saved to the 'LockMinder Wallpapers' album in the Photos app", comment: "")
-                
-                let cancelAlertAction = NYAlertAction(
-                    title: NSLocalizedString("Wallpaper Saved", comment: ""),
-                    style: .Cancel,
-                    handler: { (action: NYAlertAction!) -> Void in
-                        presentingViewController.dismissViewControllerAnimated(true, completion: nil)
-                    }
-                )
-                
-                alertViewController.addAction(cancelAlertAction)
-                
-                presentingViewController.presentViewController(alertViewController, animated: true, completion: nil)
+                presentingViewController.dismissViewControllerAnimated(true, completion: { () -> Void in
+                    let alertViewController = NYAlertViewController()
+                    alertViewController.title = NSLocalizedString("Wallpaper Saved", comment: "")
+                    alertViewController.message = NSLocalizedString("Your wallpaper was saved to the 'LockMinder Wallpapers' album in the Photos app", comment: "")
+                    alertViewController.titleFont = .mediumApplicationFont(18.0)
+                    alertViewController.messageFont = .applicationFont(17.0)
+                    alertViewController.cancelButtonTitleFont = .mediumApplicationFont(18.0)
+                    alertViewController.cancelButtonColor = .purpleApplicationColor()
+                    alertViewController.swipeDismissalGestureEnabled = true
+                    alertViewController.backgroundTapDismissalGestureEnabled = true
+                    
+                    let cancelAlertAction = NYAlertAction(
+                        title: NSLocalizedString("Ok", comment: ""),
+                        style: .Cancel,
+                        handler: { (action: NYAlertAction!) -> Void in
+                            presentingViewController.dismissViewControllerAnimated(true, completion: nil)
+                        }
+                    )
+                    
+                    alertViewController.addAction(cancelAlertAction)
+                    
+                    presentingViewController.presentViewController(alertViewController, animated: true, completion: nil)
+                })
             }
         }
     }
