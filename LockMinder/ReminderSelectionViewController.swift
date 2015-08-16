@@ -11,7 +11,7 @@ import NYAlertViewController
 import SnapKit
 import UIKit
 
-class ReminderSelectionViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ReminderSelectionViewController: UIViewController, CalendarSelectionViewControllerDelegate, UITableViewDataSource, UITableViewDelegate {
     let TableViewCellIdentifier = "TableViewCellIdentifier"
     let ReminderCellIdentifier = "ReminderCellIdentifier"
     
@@ -20,7 +20,7 @@ class ReminderSelectionViewController: UIViewController, UITableViewDataSource, 
     var tableView: UITableView!
     var previewButton: NYRoundRectButton!
     var reminders: [EKReminder]
-    var selectedCalendar: EKCalendar = EKEventStore().defaultCalendarForNewReminders()
+    var selectedCalendar: EKCalendar = ReminderLoader.getDefaultReminderCalendar()
     var selectedReminders: Set<EKReminder>
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
@@ -171,9 +171,7 @@ class ReminderSelectionViewController: UIViewController, UITableViewDataSource, 
 //        createSampleReminders()
 //        return
         
-        let defaultRemindersCalendar = self.eventStore.defaultCalendarForNewReminders()
-
-        ReminderLoader.importReminders(defaultRemindersCalendar) { (result: [EKReminder]?) -> Void in
+        ReminderLoader.importReminders(self.selectedCalendar) { (result: [EKReminder]?) -> Void in
             if let reminders = result {
                 self.reminders = reminders
                 self.tableView.reloadData()
@@ -199,6 +197,14 @@ class ReminderSelectionViewController: UIViewController, UITableViewDataSource, 
                 self.presentViewController(alertViewController, animated: true, completion: nil)
             }
         }
+    }
+    
+    // MARK: CalendarSelectionViewControllerDelegate
+    
+    func didSelectCalendar(calendar: EKCalendar) {
+        self.selectedCalendar = calendar
+        
+        self.importReminders()
     }
     
     // MARK: UITableViewDataSource
@@ -282,7 +288,12 @@ class ReminderSelectionViewController: UIViewController, UITableViewDataSource, 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         switch (indexPath.section) {
         case 0:
-            return
+            let calendarSelectionViewController = CalendarSelectionViewController(style: .Grouped)
+            calendarSelectionViewController.selectedCalendar = self.selectedCalendar
+            calendarSelectionViewController.calendars = ReminderLoader.getReminderCalendars()
+            calendarSelectionViewController.delegate = self
+            
+            self.navigationController?.pushViewController(calendarSelectionViewController, animated: true)
             
         default:
             let selectedReminder = self.reminders[indexPath.row]

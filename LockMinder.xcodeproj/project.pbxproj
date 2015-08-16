@@ -19,6 +19,7 @@
 		0E71F5921B749C30009060A0 /* NYRoundRectButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E71F5911B749C30009060A0 /* NYRoundRectButton.m */; };
 		0E71F5951B749DE3009060A0 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71F5941B749DE3009060A0 /* UIColor.swift */; };
 		0E8F34F11B8007AB0003565D /* ReminderLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8F34F01B8007AB0003565D /* ReminderLoader.swift */; };
+		0E91CA811B801CD7007FA386 /* CalendarSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E91CA801B801CD7007FA386 /* CalendarSelectionViewController.swift */; };
 		0E999EC41B786B9400925AA4 /* ImageGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E999EC31B786B9400925AA4 /* ImageGenerator.swift */; };
 		0E999EC61B787A6000925AA4 /* ImagePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E999EC51B787A6000925AA4 /* ImagePreviewViewController.swift */; };
 		0E999ECB1B78AD3800925AA4 /* SourceSansPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0E999EC81B78AD3800925AA4 /* SourceSansPro-Bold.otf */; };
@@ -69,6 +70,7 @@
 		0E71F5941B749DE3009060A0 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		0E769BE21B7846CF00D17287 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reveal.framework; path = LockMinder/Reveal.framework; sourceTree = "<group>"; };
 		0E8F34F01B8007AB0003565D /* ReminderLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderLoader.swift; sourceTree = "<group>"; };
+		0E91CA801B801CD7007FA386 /* CalendarSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarSelectionViewController.swift; sourceTree = "<group>"; };
 		0E999EC31B786B9400925AA4 /* ImageGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageGenerator.swift; sourceTree = "<group>"; };
 		0E999EC51B787A6000925AA4 /* ImagePreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePreviewViewController.swift; sourceTree = "<group>"; };
 		0E999EC81B78AD3800925AA4 /* SourceSansPro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Bold.otf"; sourceTree = "<group>"; };
@@ -136,15 +138,11 @@
 			isa = PBXGroup;
 			children = (
 				0E1DD5FA1B7469A40028095E /* AppDelegate.swift */,
-				0E1DD5FC1B7469A40028095E /* ReminderSelectionViewController.swift */,
 				0E8F34F01B8007AB0003565D /* ReminderLoader.swift */,
-				0E999EC51B787A6000925AA4 /* ImagePreviewViewController.swift */,
 				0E999EC31B786B9400925AA4 /* ImageGenerator.swift */,
-				0E71F58B1B749330009060A0 /* CheckmarkView.swift */,
-				0E71F58D1B74934F009060A0 /* ReminderTableViewCell.swift */,
-				0E07AC591B80176500134328 /* TableViewCell.swift */,
-				0E71F5941B749DE3009060A0 /* UIColor.swift */,
-				0E999ECE1B78ADC600925AA4 /* UIFont.swift */,
+				0E91CA821B801CE1007FA386 /* View Controllers */,
+				0E91CA841B801CF4007FA386 /* Views */,
+				0E91CA831B801CEC007FA386 /* Extensions */,
 				0E999EC71B78AD3800925AA4 /* Fonts */,
 				0E71F5931B749C36009060A0 /* Vendor */,
 				0EE204841B747D5E00355A6C /* LaunchScreen.xib */,
@@ -180,6 +178,35 @@
 				0E71F5911B749C30009060A0 /* NYRoundRectButton.m */,
 			);
 			name = Vendor;
+			sourceTree = "<group>";
+		};
+		0E91CA821B801CE1007FA386 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0E1DD5FC1B7469A40028095E /* ReminderSelectionViewController.swift */,
+				0E91CA801B801CD7007FA386 /* CalendarSelectionViewController.swift */,
+				0E999EC51B787A6000925AA4 /* ImagePreviewViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		0E91CA831B801CEC007FA386 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0E71F5941B749DE3009060A0 /* UIColor.swift */,
+				0E999ECE1B78ADC600925AA4 /* UIFont.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		0E91CA841B801CF4007FA386 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0E71F58B1B749330009060A0 /* CheckmarkView.swift */,
+				0E71F58D1B74934F009060A0 /* ReminderTableViewCell.swift */,
+				0E07AC591B80176500134328 /* TableViewCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		0E999EC71B78AD3800925AA4 /* Fonts */ = {
@@ -403,6 +430,7 @@
 				0E1DD5FB1B7469A40028095E /* AppDelegate.swift in Sources */,
 				0E71F5921B749C30009060A0 /* NYRoundRectButton.m in Sources */,
 				0E07AC5A1B80176500134328 /* TableViewCell.swift in Sources */,
+				0E91CA811B801CD7007FA386 /* CalendarSelectionViewController.swift in Sources */,
 				0E8F34F11B8007AB0003565D /* ReminderLoader.swift in Sources */,
 				0E999EC61B787A6000925AA4 /* ImagePreviewViewController.swift in Sources */,
 				0E71F58E1B74934F009060A0 /* ReminderTableViewCell.swift in Sources */,
