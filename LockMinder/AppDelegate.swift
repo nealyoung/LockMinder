@@ -40,8 +40,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().titleTextAttributes = navigationBarTitleTextAttributes
         UINavigationBar.appearance().tintColor = .whiteColor()
         UINavigationBar.appearance().barTintColor = .purpleApplicationColor()
-        
-        UIApplication.sharedApplication().setStatusBarStyle(.LightContent, animated: false)
     }
 }
 
