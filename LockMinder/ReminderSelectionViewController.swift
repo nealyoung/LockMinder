@@ -142,7 +142,7 @@ class ReminderSelectionViewController: UIViewController, CalendarSelectionViewCo
     
     private func createSampleReminders() {
         var completedRemindersPredicate = self.eventStore.predicateForCompletedRemindersWithCompletionDateStarting(nil, ending: nil, calendars: [self.selectedCalendar])
-        self.eventStore.fetchRemindersMatchingPredicate(completedRemindersPredicate, completion: { (reminders: [AnyObject]!) -> Void in
+        self.eventStore.fetchRemindersMatchingPredicate(completedRemindersPredicate) { (reminders: [AnyObject]!) -> Void in
             if let reminders = reminders as? [EKReminder] {
                 for reminder in reminders {
                     self.eventStore.removeReminder(reminder, commit: true, error: nil)
@@ -164,7 +164,7 @@ class ReminderSelectionViewController: UIViewController, CalendarSelectionViewCo
             self.reminders = [reminder1, reminder2, reminder3]
             
             self.tableView.reloadData()
-        })
+        }
     }
     
     private func importReminders() {
@@ -184,6 +184,7 @@ class ReminderSelectionViewController: UIViewController, CalendarSelectionViewCo
                 alertViewController.cancelButtonColor = .purpleApplicationColor()
                 alertViewController.swipeDismissalGestureEnabled = true
                 alertViewController.backgroundTapDismissalGestureEnabled = true
+                
                 let action = NYAlertAction(
                     title: "Done",
                     style: .Cancel,
@@ -203,6 +204,7 @@ class ReminderSelectionViewController: UIViewController, CalendarSelectionViewCo
     
     func didSelectCalendar(calendar: EKCalendar) {
         self.selectedCalendar = calendar
+        self.selectedReminders.removeAll(keepCapacity: false)
         
         self.importReminders()
     }

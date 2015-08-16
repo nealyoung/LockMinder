@@ -58,6 +58,7 @@ class ImageGenerator {
         }
         
         let maxListHeight = screenBounds.size.height - ClockHeight - SliderHeight
+
         if (listBackgroundHeight > maxListHeight) {
             listBackgroundHeight = maxListHeight;
         }
@@ -84,23 +85,16 @@ class ImageGenerator {
         CGContextSetFillColorWithColor(ctx, UIColor(white: 1.0, alpha: 0.8).CGColor);
         CGContextFillPath(ctx);
         
-        var yOffset: CGFloat = 0.0
+        var yPosition: CGFloat = 0.0
         
         for (index, reminder) in enumerate(reminders) {
-            // Draw the bullet point
+            // Compute the frame of the bullet point
             let itemBulletRect = CGRect(
                 x: CGRectGetMinX(listBackgroundRect) + ListItemXInset,
-                y: CGRectGetMinY(listBackgroundRect) + ListItemXInset + yOffset + ItemBulletWidth * 1.5,
+                y: CGRectGetMinY(listBackgroundRect) + ListItemXInset + yPosition + ItemBulletWidth * 1.5,
                 width: ItemBulletWidth,
                 height: ItemBulletWidth
             );
-            
-            let itemBulletPath = UIBezierPath(ovalInRect: itemBulletRect)
-            
-            CGContextBeginPath(ctx);
-            CGContextAddPath(ctx, itemBulletPath.CGPath);
-            CGContextSetFillColorWithColor(ctx, UIColor.blackColor().CGColor);
-            CGContextFillPath(ctx);
             
             // Compute the size required to display the reminder (to support multi-line text)
             var reminderRect = reminder.title.boundingRectWithSize(
@@ -109,12 +103,25 @@ class ImageGenerator {
                 attributes: [NSFontAttributeName: reminderFont],
                 context: nil
             )
-
-            reminderRect.origin = CGPointMake(CGRectGetMinX(listBackgroundRect) + ListItemXInset + (ItemBulletWidth * 2.0),
-            CGRectGetMinY(listBackgroundRect) + ListItemXInset + yOffset);
+            
+            reminderRect.origin = CGPoint(
+                x: CGRectGetMinX(listBackgroundRect) + ListItemXInset + (ItemBulletWidth * 2.0),
+                y: CGRectGetMinY(listBackgroundRect) + ListItemXInset + yPosition
+            )
             reminderRect.size.height += ListItemPadding * 2.0;
             
-            yOffset += CGRectGetHeight(reminderRect);
+            yPosition += CGRectGetHeight(reminderRect);
+            
+            if (yPosition > maxListHeight) {
+                break
+            }
+            
+            // Draw the bullet point
+            let itemBulletPath = UIBezierPath(ovalInRect: itemBulletRect)
+            CGContextBeginPath(ctx);
+            CGContextAddPath(ctx, itemBulletPath.CGPath);
+            CGContextSetFillColorWithColor(ctx, UIColor.blackColor().CGColor);
+            CGContextFillPath(ctx);
             
             reminder.title.drawInRect(
                 reminderRect,
