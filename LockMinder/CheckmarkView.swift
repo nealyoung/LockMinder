@@ -9,7 +9,7 @@
 import UIKit
 
 class CheckmarkView: UIView {
-    let Inset = 4.0
+    let Inset: CGFloat = 4.0
     
     var selected: Bool {
         didSet {
@@ -36,7 +36,7 @@ class CheckmarkView: UIView {
         super.drawRect(rect)
         
         let ctx = UIGraphicsGetCurrentContext()
-        let borderPath = UIBezierPath(ovalInRect: CGRectInset(rect, CGFloat(Inset), CGFloat(Inset)))
+        let borderPath = UIBezierPath(ovalInRect: CGRectInset(rect, Inset, Inset))
         
         CGContextAddPath(ctx, borderPath.CGPath);
         CGContextSetStrokeColorWithColor(ctx, UIColor.whiteColor().CGColor);
@@ -44,12 +44,11 @@ class CheckmarkView: UIView {
         CGContextStrokePath(ctx);
         
         CGContextSetShadowWithColor(ctx, CGSizeZero, 4.0, nil);
-
         
         if (self.selected) {
             CGContextBeginPath(ctx);
             
-            let circleRect = CGRectInset(rect, CGFloat(Inset + 1.0), CGFloat(Inset + 1.0));
+            let circleRect = CGRectInset(rect, Inset + 1.0, Inset + 1.0);
             let circlePath = UIBezierPath(ovalInRect: circleRect)
             CGContextAddPath(ctx, circlePath.CGPath);
             CGContextSetFillColorWithColor(ctx, self.tintColor.CGColor);

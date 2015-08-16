@@ -12,12 +12,15 @@ import SnapKit
 import UIKit
 
 class ReminderSelectionViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    let TableViewCellIdentifier = "TableViewCellIdentifier"
     let ReminderCellIdentifier = "ReminderCellIdentifier"
+    
     let eventStore = EKEventStore()
     
     var tableView: UITableView!
     var previewButton: NYRoundRectButton!
     var reminders: [EKReminder]
+    var selectedCalendar: EKCalendar = EKEventStore().defaultCalendarForNewReminders()
     var selectedReminders: Set<EKReminder>
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
@@ -38,6 +41,14 @@ class ReminderSelectionViewController: UIViewController, UITableViewDataSource, 
         return .LightContent
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let indexPath = self.tableView.indexPathForSelectedRow() {
+            self.tableView.deselectRowAtIndexPath(indexPath, animated: animated)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,6 +58,7 @@ class ReminderSelectionViewController: UIViewController, UITableViewDataSource, 
         self.tableView.setTranslatesAutoresizingMaskIntoConstraints(false)
         self.tableView.dataSource = self;
         self.tableView.delegate = self;
+        self.tableView.registerClass(TableViewCell.self, forCellReuseIdentifier: TableViewCellIdentifier)
         self.tableView.registerClass(ReminderTableViewCell.self, forCellReuseIdentifier: ReminderCellIdentifier)
         self.view.addSubview(self.tableView)
         
@@ -129,8 +141,7 @@ class ReminderSelectionViewController: UIViewController, UITableViewDataSource, 
     }
     
     private func createSampleReminders() {
-        var defaultRemindersCalendar = self.eventStore.defaultCalendarForNewReminders()
-        var completedRemindersPredicate = self.eventStore.predicateForCompletedRemindersWithCompletionDateStarting(nil, ending: nil, calendars: [defaultRemindersCalendar])
+        var completedRemindersPredicate = self.eventStore.predicateForCompletedRemindersWithCompletionDateStarting(nil, ending: nil, calendars: [self.selectedCalendar])
         self.eventStore.fetchRemindersMatchingPredicate(completedRemindersPredicate, completion: { (reminders: [AnyObject]!) -> Void in
             if let reminders = reminders as? [EKReminder] {
                 for reminder in reminders {
@@ -157,11 +168,16 @@ class ReminderSelectionViewController: UIViewController, UITableViewDataSource, 
     }
     
     private func importReminders() {
-        createSampleReminders()
-        return;
+//        createSampleReminders()
+//        return
         
-        self.eventStore.requestAccessToEntityType(EKEntityTypeReminder, completion: { (granted: Bool, error: NSError!) -> Void in
-            if (!granted || error != nil) {
+        let defaultRemindersCalendar = self.eventStore.defaultCalendarForNewReminders()
+
+        ReminderLoader.importReminders(defaultRemindersCalendar) { (result: [EKReminder]?) -> Void in
+            if let reminders = result {
+                self.reminders = reminders
+                self.tableView.reloadData()
+            } else {
                 let alertViewController = NYAlertViewController()
                 alertViewController.title = NSLocalizedString("Reminder Access Declined", comment: "")
                 alertViewController.message = NSLocalizedString("Use the Settings app to allow LockMinder access to your reminders", comment: "")
@@ -181,36 +197,49 @@ class ReminderSelectionViewController: UIViewController, UITableViewDataSource, 
                 alertViewController.addAction(action)
                 
                 self.presentViewController(alertViewController, animated: true, completion: nil)
-            } else {
-                var defaultRemindersCalendar = self.eventStore.defaultCalendarForNewReminders()
-                var completedRemindersPredicate = self.eventStore.predicateForCompletedRemindersWithCompletionDateStarting(nil, ending: nil, calendars: [defaultRemindersCalendar])
-                self.eventStore.fetchRemindersMatchingPredicate(completedRemindersPredicate, completion: { (reminders: [AnyObject]!) -> Void in
-                    if let reminders = reminders as? [EKReminder] {
-                        self.reminders = reminders
-                        
-                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                            self.tableView.reloadData()
-                        })
-                    }
-                })
             }
-        })
+        }
     }
     
     // MARK: UITableViewDataSource
     
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 2
+    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.reminders.count;
+        switch (section) {
+        case 0:
+            return 1
+            
+        case 1:
+            return self.reminders.count
+            
+        default:
+            return 0
+        }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier(ReminderCellIdentifier, forIndexPath: indexPath) as! ReminderTableViewCell;
-        
-        let reminder = self.reminders[indexPath.row]
-        
-        cell.checkmarkView.selected = self.selectedReminders.contains(reminder)
-        cell.reminderLabel.text = reminder.title
-        return cell;
+        switch (indexPath.section) {
+        case 0:
+            let cell = tableView.dequeueReusableCellWithIdentifier(TableViewCellIdentifier, forIndexPath: indexPath) as! UITableViewCell;
+            
+            cell.accessoryType = .DisclosureIndicator
+            cell.textLabel?.text = NSLocalizedString("Reminder List", comment: "")
+            cell.detailTextLabel?.text = self.selectedCalendar.title
+            
+            return cell;
+            
+        default:
+            let cell = tableView.dequeueReusableCellWithIdentifier(ReminderCellIdentifier, forIndexPath: indexPath) as! ReminderTableViewCell;
+            
+            let reminder = self.reminders[indexPath.row]
+            
+            cell.checkmarkView.selected = self.selectedReminders.contains(reminder)
+            cell.reminderLabel.text = reminder.title
+            return cell;
+        }
     }
     
     // MARK: UITableViewDelegate
@@ -220,34 +249,52 @@ class ReminderSelectionViewController: UIViewController, UITableViewDataSource, 
     }
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerLabel = UILabel()
-        headerLabel.textColor = UIColor(white: 0.16, alpha: 1.0)
-        headerLabel.font = UIFont.applicationFont(15.0)
-        headerLabel.textAlignment = .Center
-        
-        if (self.reminders.count > 0) {
-            headerLabel.text = NSLocalizedString("Select reminders to appear on your wallpaper", comment: "")
-        } else {
-            headerLabel.text = NSLocalizedString("No reminders", comment: "")
+        switch (section) {
+        case 1:
+            let headerLabel = UILabel()
+            headerLabel.textColor = UIColor(white: 0.16, alpha: 1.0)
+            headerLabel.font = UIFont.applicationFont(15.0)
+            headerLabel.textAlignment = .Center
+            
+            if (self.reminders.count > 0) {
+                headerLabel.text = NSLocalizedString("Select reminders to appear on your wallpaper", comment: "")
+            } else {
+                headerLabel.text = NSLocalizedString("No reminders", comment: "")
+            }
+            
+            return headerLabel
+            
+        default:
+            return nil
         }
-        
-        return headerLabel
     }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 44.0
+        switch (section) {
+        case 1:
+            return 44.0
+            
+        default:
+            return 0.0
+        }
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let selectedReminder = self.reminders[indexPath.row]
-        let cell = self.tableView.cellForRowAtIndexPath(indexPath) as! ReminderTableViewCell
-        
-        if (self.selectedReminders.contains(selectedReminder)) {
-            self.selectedReminders.remove(selectedReminder)
-            cell.checkmarkView.setSelected(false, animated: true)
-        } else {
-            self.selectedReminders.insert(selectedReminder)
-            cell.checkmarkView.setSelected(true, animated: true)
+        switch (indexPath.section) {
+        case 0:
+            return
+            
+        default:
+            let selectedReminder = self.reminders[indexPath.row]
+            let cell = self.tableView.cellForRowAtIndexPath(indexPath) as! ReminderTableViewCell
+            
+            if (self.selectedReminders.contains(selectedReminder)) {
+                self.selectedReminders.remove(selectedReminder)
+                cell.checkmarkView.setSelected(false, animated: true)
+            } else {
+                self.selectedReminders.insert(selectedReminder)
+                cell.checkmarkView.setSelected(true, animated: true)
+            }
         }
     }
 }
