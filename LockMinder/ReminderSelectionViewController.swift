@@ -141,11 +141,11 @@ class ReminderSelectionViewController: UIViewController, CalendarSelectionViewCo
     }
     
     private func createSampleReminders() {
-        var completedRemindersPredicate = self.eventStore.predicateForCompletedRemindersWithCompletionDateStarting(nil, ending: nil, calendars: [self.selectedCalendar])
+        var completedRemindersPredicate = self.eventStore.predicateForIncompleteRemindersWithDueDateStarting(nil, ending: nil, calendars: [self.selectedCalendar])
         self.eventStore.fetchRemindersMatchingPredicate(completedRemindersPredicate) { (reminders: [AnyObject]!) -> Void in
             if let reminders = reminders as? [EKReminder] {
                 for reminder in reminders {
-                    self.eventStore.removeReminder(reminder, commit: true, error: nil)
+//                    self.eventStore.removeReminder(reminder, commit: true, error: nil)
                 }
             }
             
@@ -161,15 +161,19 @@ class ReminderSelectionViewController: UIViewController, CalendarSelectionViewCo
             reminder3.title = "Pick up dry cleaning"
             self.eventStore.saveReminder(reminder3, commit: true, error: nil)
             
-            self.reminders = [reminder1, reminder2, reminder3]
+            let reminder4 = EKReminder(eventStore: self.eventStore)
+            reminder4.title = "Finish TPS reports"
+            self.eventStore.saveReminder(reminder3, commit: true, error: nil)
+            
+            self.reminders = [reminder1, reminder2, reminder3, reminder4]
             
             self.tableView.reloadData()
         }
     }
     
     private func importReminders() {
-//        createSampleReminders()
-//        return
+        createSampleReminders()
+        return;
         
         ReminderLoader.importReminders(self.selectedCalendar) { (result: [EKReminder]?) -> Void in
             if let reminders = result {

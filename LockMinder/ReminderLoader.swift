@@ -31,7 +31,7 @@ class ReminderLoader {
             if (!granted || error != nil) {
                 completion(result: nil)
             } else {
-                var completedRemindersPredicate = self.eventStore.predicateForCompletedRemindersWithCompletionDateStarting(nil, ending: nil, calendars: [calendar])
+                var completedRemindersPredicate = self.eventStore.predicateForIncompleteRemindersWithDueDateStarting(nil, ending: nil, calendars: [calendar])
                 self.eventStore.fetchRemindersMatchingPredicate(completedRemindersPredicate) { (reminders: [AnyObject]!) -> Void in
                     if let reminders = reminders as? [EKReminder] {
                         dispatch_async(dispatch_get_main_queue()) { () -> Void in
