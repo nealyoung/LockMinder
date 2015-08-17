@@ -40,6 +40,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().titleTextAttributes = navigationBarTitleTextAttributes
         UINavigationBar.appearance().tintColor = .whiteColor()
         UINavigationBar.appearance().barTintColor = .purpleApplicationColor()
+        
+        let barButtonItemTitleTextAttributes = [ NSFontAttributeName: UIFont.mediumApplicationFont(16.0) ]
+        UIBarButtonItem.appearance().setTitleTextAttributes(barButtonItemTitleTextAttributes, forState: .Normal)
     }
 }
 
