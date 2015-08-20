@@ -175,33 +175,33 @@ class ReminderSelectionViewController: UIViewController, CalendarSelectionViewCo
         #if (arch(i386) || arch(x86_64)) && os(iOS)
             createSampleReminders()
             return;
-        #else
+            #else
             ReminderLoader.importReminders(self.selectedCalendar) { (result: [EKReminder]?) -> Void in
-            if let reminders = result {
-            self.reminders = reminders
-            self.tableView.reloadData()
-            } else {
-            let alertViewController = NYAlertViewController()
-            alertViewController.title = NSLocalizedString("Reminder Access Declined", comment: "")
-            alertViewController.message = NSLocalizedString("Use the Settings app to allow LockMinder access to your reminders", comment: "")
-            alertViewController.titleFont = .mediumApplicationFont(17.0)
-            alertViewController.messageFont = .applicationFont(17.0)
-            alertViewController.cancelButtonColor = .purpleApplicationColor()
-            alertViewController.swipeDismissalGestureEnabled = true
-            alertViewController.backgroundTapDismissalGestureEnabled = true
-            
-            let action = NYAlertAction(
-            title: "Done",
-            style: .Cancel,
-            handler: { (action: NYAlertAction!) -> Void in
-            self.dismissViewControllerAnimated(true, completion: nil)
-            }
-            )
-            
-            alertViewController.addAction(action)
-            
-            self.presentViewController(alertViewController, animated: true, completion: nil)
-            }
+                if let reminders = result {
+                    self.reminders = reminders
+                    self.tableView.reloadData()
+                } else {
+                    let alertViewController = NYAlertViewController()
+                    alertViewController.title = NSLocalizedString("Reminder Access Declined", comment: "")
+                    alertViewController.message = NSLocalizedString("Use the Settings app to allow LockMinder access to your reminders", comment: "")
+                    alertViewController.titleFont = .mediumApplicationFont(17.0)
+                    alertViewController.messageFont = .applicationFont(17.0)
+                    alertViewController.cancelButtonColor = .purpleApplicationColor()
+                    alertViewController.swipeDismissalGestureEnabled = true
+                    alertViewController.backgroundTapDismissalGestureEnabled = true
+                    
+                    let action = NYAlertAction(
+                        title: "Done",
+                        style: .Cancel,
+                        handler: { (action: NYAlertAction!) -> Void in
+                            self.dismissViewControllerAnimated(true, completion: nil)
+                        }
+                    )
+                    
+                    alertViewController.addAction(action)
+                    
+                    self.presentViewController(alertViewController, animated: true, completion: nil)
+                }
             }
         #endif
     }

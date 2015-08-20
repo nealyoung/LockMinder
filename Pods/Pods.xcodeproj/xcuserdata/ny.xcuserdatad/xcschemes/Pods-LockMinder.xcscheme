@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AB0CD40FC57B741499899F5D"
+               BlueprintIdentifier = "1F9468D705C77B7F1F0CE67D"
                BuildableName = "Pods_LockMinder.framework"
                BlueprintName = "Pods-LockMinder"
                ReferencedContainer = "container:Pods.xcodeproj">

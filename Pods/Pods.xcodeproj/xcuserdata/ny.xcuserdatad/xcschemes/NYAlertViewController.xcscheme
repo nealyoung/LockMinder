@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6778B0CD2CB9A39947FCC7EF"
+               BlueprintIdentifier = "0AE150BBE4184A614787EEAB"
                BuildableName = "NYAlertViewController.framework"
                BlueprintName = "NYAlertViewController"
                ReferencedContainer = "container:Pods.xcodeproj">
