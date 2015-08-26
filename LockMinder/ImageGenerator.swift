@@ -24,16 +24,16 @@ class ImageGenerator {
         UIGraphicsBeginImageContextWithOptions(screenBounds.size, true, scale)
         guard let ctx = UIGraphicsGetCurrentContext() else { return UIImage() }
         
-        let horizontalImageScale = screenBounds.size.width / backgroundImage.size.width
-        let verticalImageScale = screenBounds.size.height / backgroundImage.size.height
+//        let horizontalImageScale = screenBounds.size.width / backgroundImage.size.width
+//        let verticalImageScale = screenBounds.size.height / backgroundImage.size.height
         
-        var imageRect: CGRect
-
-        if (horizontalImageScale > verticalImageScale) {
-            imageRect = CGRectMake(0.0, 0.0, backgroundImage.size.width * horizontalImageScale, backgroundImage.size.height * horizontalImageScale);
-        } else {
-            imageRect = CGRectMake(0.0, 0.0, backgroundImage.size.width * verticalImageScale, backgroundImage.size.height * verticalImageScale);
-        }
+//        var imageRect: CGRect
+//
+//        if (horizontalImageScale > verticalImageScale) {
+//            imageRect = CGRectMake(0.0, 0.0, backgroundImage.size.width * horizontalImageScale, backgroundImage.size.height * horizontalImageScale);
+//        } else {
+//            imageRect = CGRectMake(0.0, 0.0, backgroundImage.size.width * verticalImageScale, backgroundImage.size.height * verticalImageScale);
+//        }
         
         self.drawGradientBackground(
             ctx,
@@ -87,7 +87,7 @@ class ImageGenerator {
         
         var yPosition: CGFloat = 0.0
         
-        for (index, reminder) in reminders.enumerate() {
+        for reminder in reminders {
             // Compute the frame of the bullet point
             let itemBulletRect = CGRect(
                 x: CGRectGetMinX(listBackgroundRect) + ListItemXInset,

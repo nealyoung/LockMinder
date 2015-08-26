@@ -8,14 +8,26 @@
 
 extension UIFont {
     class func applicationFont(size: CGFloat) -> UIFont {
-        return UIFont(name: "SourceSansPro-Regular", size: size)!
+        if #available(iOS 9, *) {
+            return UIFont.systemFontOfSize(size)
+        } else {
+            return UIFont(name: "SourceSansPro-Regular", size: size)!
+        }
     }
     
     class func boldApplicationFont(size: CGFloat) -> UIFont {
-        return UIFont(name: "SourceSansPro-Bold", size: size)!
+        if #available(iOS 9, *) {
+            return UIFont.systemFontOfSize(size, weight: UIFontWeightBold)
+        } else {
+            return UIFont(name: "SourceSansPro-Bold", size: size)!
+        }
     }
     
     class func mediumApplicationFont(size: CGFloat) -> UIFont {
-        return UIFont(name: "SourceSansPro-Semibold", size: size)!
+        if #available(iOS 9, *) {
+            return UIFont.systemFontOfSize(size, weight: UIFontWeightMedium)
+        } else {
+            return UIFont(name: "SourceSansPro-Semibold", size: size)!
+        }
     }
 }

@@ -32,8 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.tintColor = UIColor.purpleApplicationColor()
         
         let navigationBarTitleTextAttributes = [
-            NSForegroundColorAttributeName: UIColor.whiteColor(),
-            NSFontAttributeName: UIFont.mediumApplicationFont(19.0)
+            NSForegroundColorAttributeName: UIColor.whiteColor()
         ]
         
         UINavigationBar.appearance().translucent = false

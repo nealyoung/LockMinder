@@ -53,7 +53,7 @@ class ReminderSelectionViewController: UIViewController, CalendarSelectionViewCo
         super.viewDidLoad()
         
         self.title = NSLocalizedString("LockMinder", comment: "")
-    
+        
         self.tableView = UITableView(frame: CGRectZero, style: .Grouped)
         self.tableView.translatesAutoresizingMaskIntoConstraints = false
         self.tableView.dataSource = self;
@@ -142,36 +142,36 @@ class ReminderSelectionViewController: UIViewController, CalendarSelectionViewCo
     
     private func createSampleReminders() {
         let completedRemindersPredicate = self.eventStore.predicateForIncompleteRemindersWithDueDateStarting(nil, ending: nil, calendars: [self.selectedCalendar])
-            self.eventStore.fetchRemindersMatchingPredicate(completedRemindersPredicate) { (reminders: [EKReminder]?) -> Void in
-                if let reminders = reminders {
-                    for reminder in reminders {
-//                        //                    self.eventStore.removeReminder(reminder, commit: true, error: nil)
-                    }
+        self.eventStore.fetchRemindersMatchingPredicate(completedRemindersPredicate) { (reminders: [EKReminder]?) -> Void in
+            if let reminders = reminders {
+                for reminder in reminders {
+                    try! self.eventStore.removeReminder(reminder, commit: true)
                 }
-    
-                do {
-                    let reminder1 = EKReminder(eventStore: self.eventStore)
-                    reminder1.title = "Buy milk"
-                    try self.eventStore.saveReminder(reminder1, commit: true)
-                    
-                    let reminder2 = EKReminder(eventStore: self.eventStore)
-                    reminder2.title = "Pay water bill"
-                    try self.eventStore.saveReminder(reminder2, commit: true)
-                    
-                    let reminder3 = EKReminder(eventStore: self.eventStore)
-                    reminder3.title = "Pick up dry cleaning"
-                    try self.eventStore.saveReminder(reminder3, commit: true)
-                    
-                    let reminder4 = EKReminder(eventStore: self.eventStore)
-                    reminder4.title = "Finish TPS reports"
-                    try self.eventStore.saveReminder(reminder3, commit: true)
-                    
-                    self.reminders = [reminder1, reminder2, reminder3, reminder4]
-                    
-                    self.tableView.reloadData()
-                } catch {
-                    
-                }
+            }
+            
+            do {
+                let reminder1 = EKReminder(eventStore: self.eventStore)
+                reminder1.title = "Buy milk"
+                try self.eventStore.saveReminder(reminder1, commit: true)
+                
+                let reminder2 = EKReminder(eventStore: self.eventStore)
+                reminder2.title = "Pay water bill"
+                try self.eventStore.saveReminder(reminder2, commit: true)
+                
+                let reminder3 = EKReminder(eventStore: self.eventStore)
+                reminder3.title = "Pick up dry cleaning"
+                try self.eventStore.saveReminder(reminder3, commit: true)
+                
+                let reminder4 = EKReminder(eventStore: self.eventStore)
+                reminder4.title = "Finish TPS reports"
+                try self.eventStore.saveReminder(reminder3, commit: true)
+                
+                self.reminders = [reminder1, reminder2, reminder3, reminder4]
+                
+                self.tableView.reloadData()
+            } catch {
+                
+            }
         }
     }
     
