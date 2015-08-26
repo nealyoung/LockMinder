@@ -149,28 +149,31 @@ class ReminderSelectionViewController: UIViewController, CalendarSelectionViewCo
                 }
             }
             
+            let reminder1 = EKReminder(eventStore: self.eventStore)
+            reminder1.title = "Buy milk"
+            
+            let reminder2 = EKReminder(eventStore: self.eventStore)
+            reminder2.title = "Pay water bill"
+            
+            let reminder3 = EKReminder(eventStore: self.eventStore)
+            reminder3.title = "Pick up dry cleaning"
+            
+            let reminder4 = EKReminder(eventStore: self.eventStore)
+            reminder4.title = "Finish TPS reports"
+            
             do {
-                let reminder1 = EKReminder(eventStore: self.eventStore)
-                reminder1.title = "Buy milk"
                 try self.eventStore.saveReminder(reminder1, commit: true)
-                
-                let reminder2 = EKReminder(eventStore: self.eventStore)
-                reminder2.title = "Pay water bill"
                 try self.eventStore.saveReminder(reminder2, commit: true)
-                
-                let reminder3 = EKReminder(eventStore: self.eventStore)
-                reminder3.title = "Pick up dry cleaning"
                 try self.eventStore.saveReminder(reminder3, commit: true)
-                
-                let reminder4 = EKReminder(eventStore: self.eventStore)
-                reminder4.title = "Finish TPS reports"
                 try self.eventStore.saveReminder(reminder3, commit: true)
-                
-                self.reminders = [reminder1, reminder2, reminder3, reminder4]
-                
-                self.tableView.reloadData()
             } catch {
                 
+            }
+            
+            self.reminders = [reminder1, reminder2, reminder3, reminder4]
+            
+            dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                self.tableView.reloadData()
             }
         }
     }
@@ -179,7 +182,7 @@ class ReminderSelectionViewController: UIViewController, CalendarSelectionViewCo
         #if (arch(i386) || arch(x86_64)) && os(iOS)
             createSampleReminders()
             return;
-            #else
+        #else
             ReminderLoader.importReminders(self.selectedCalendar) { (result: [EKReminder]?) -> Void in
                 if let reminders = result {
                     self.reminders = reminders
