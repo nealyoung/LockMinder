@@ -5,7 +5,7 @@ use_frameworks!
 target 'LockMinder' do
   pod 'NYAlertViewController'
   pod 'Reveal-iOS-SDK', :configurations => ['Debug']
-  pod 'SnapKit'
+  pod 'SnapKit', :git => 'git@github.com:SnapKit/SnapKit.git', :branch => 'swift-2.0'
 end
 
 target 'LockMinderTests' do

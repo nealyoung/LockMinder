@@ -23,11 +23,11 @@ class ReminderLoader {
     }
     
     class func getReminderCalendars() -> [EKCalendar] {
-        return eventStore.calendarsForEntityType(EKEntityTypeReminder) as! [EKCalendar]
+        return eventStore.calendarsForEntityType(.Reminder)
     }
     
     class func importReminders(calendar: EKCalendar, completion: (result: Optional<[EKReminder]>)->Void) {
-        eventStore.requestAccessToEntityType(EKEntityTypeReminder) { (granted: Bool, error: NSError!) -> Void in
+        eventStore.requestAccessToEntityType(.Reminder) { (granted: Bool, error: NSError!) -> Void in
             if (!granted || error != nil) {
                 completion(result: nil)
             } else {

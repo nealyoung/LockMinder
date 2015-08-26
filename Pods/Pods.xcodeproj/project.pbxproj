@@ -7,42 +7,42 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		14499D71364F63D86C57F7326BE02149 /* NYAlertViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DF375AB9FEF5B734DBB8146037E0B1F /* NYAlertViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1A089D36CCCBDD881CCD45446954B371 /* SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E13811703F4D15A85A9D2260B00A6A8 /* SnapKit.swift */; };
-		1B9E184B27E4759F86560C96FE7ED6A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C98249A0D5A79ABE43A5E61D5242B25 /* Foundation.framework */; };
 		22146A3B71EE47900269447075267D49 /* ConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79B446D865CE125AC740FDABBA29405 /* ConstraintItem.swift */; };
-		2EA63FEE0804FFDCE39E04B9336905E3 /* NYAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6D8F01021DD4924D2CDAE974FC25408 /* NYAlertViewController.m */; };
 		34ABF37525C632CAD2173C0C9EB7AFA2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C98249A0D5A79ABE43A5E61D5242B25 /* Foundation.framework */; };
 		3C82DAC4A708FB34E8EA66C82D08EAA2 /* View+SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5B605BCB86C161823225245B5EDBB7 /* View+SnapKit.swift */; };
-		47AEB98408D108EEA43828872E9276F3 /* NYAlertViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA5AAFED2CA78DAD1C70EBDC49CE265 /* NYAlertViewController-dummy.m */; };
-		4BCE7FD1C117F32DCD76A23C52FAD3B2 /* NYAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56302B5AF15B59D1D5D56CA83957A8BD /* NYAlertView.m */; };
+		3F0F6A2E91D11640EE0626943EED5C01 /* NYAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CCA6D80B79291B68FE615DE1FF6C66 /* NYAlertView.m */; };
 		51C84A68CD70ED21892B0A76DD44DB2C /* Pods-LockMinder-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B838EF45CF7A769ACCD85BB88E7B994 /* Pods-LockMinder-dummy.m */; };
 		604AC93637F2CBB5D54D0950C2E56CBA /* ConstraintMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11A7B60D7208B393697E6DBAC0309DA /* ConstraintMaker.swift */; };
 		6BFDEC714855D29F024742DA5E9DBFB5 /* SnapKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D367D337E0670CA623B6F343C738D610 /* SnapKit-dummy.m */; };
 		726CC8949AD9DB523732F497AEF566A0 /* ConstraintRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D7963F02D79E7AF9280CB2426B041D /* ConstraintRelation.swift */; };
 		7780A7BEEA4951F05B732D60C9CE2F61 /* Pods-LockMinder-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BDA875EC723B09DA21A7079D19C7D02 /* Pods-LockMinder-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7F2CDD78A4FBF0039877A79F00D56389 /* NYAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BE1250A7D30DA551317EF5A45951F20 /* NYAlertView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		781646C92C63AB77D4DC3954E8368198 /* NYAlertViewController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D4B683A91B24896A56E31B92BBB3EA1 /* NYAlertViewController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		804B994DD42A6A3C3A324D5377F1FB97 /* ConstraintAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799F700E0350C1622AF654FBAC56DC3E /* ConstraintAttributes.swift */; };
 		84ED7FEBE3F346BEA288422986F53438 /* Debugging.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6701D0395AA53671F30906FDA34B59 /* Debugging.swift */; };
 		85E0A62EDF1B29F208623993EB92D9E7 /* SnapKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 413D4C68BCDED964834146EFB422C3B3 /* SnapKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		86D7CDF1DF0E7F8EF6B64A3D2DE329B7 /* LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB44D45A9A34C20A034D0D004999B563 /* LayoutConstraint.swift */; };
 		9D7C9A631C0EB1530C0DCFA887618587 /* ConstraintDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC6726B2AA1DAAC6F94E1FF507AE34F /* ConstraintDescription.swift */; };
-		A8D44FA8C6E8D2DEAFC93122F1ECA7A4 /* NYAlertViewController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EF3DB2A880A320949DE01199A86D6B05 /* NYAlertViewController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B12F19D2BD4393832C2CDEC13930A5E7 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0270ACC0A1AAAC0088467BF0131477 /* Constraint.swift */; };
 		B2B8DA274F8F397158E9D33FFE049FFD /* EdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A76927A838B74013DE81260B84691E9 /* EdgeInsets.swift */; };
+		BD1D045EB7113EFF00D65C47499B5C62 /* NYAlertViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 129AC0AAA8347965D456131DF6256911 /* NYAlertViewController-dummy.m */; };
+		D56C496BB52ACE929ED5B8DC6105AFD7 /* NYAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BCBC9BEF227D566E8E302D0F16C14B2 /* NYAlertView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D71623F5977FF8A1787D5E62B853B07E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C98249A0D5A79ABE43A5E61D5242B25 /* Foundation.framework */; };
+		E35570E18EF111E3AF35233F5C329A4B /* NYAlertViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 08872A01A5EA7776054153B330CF21DC /* NYAlertViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EDD147D64BC86E5198D4E99B05028490 /* ViewController+SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00F6A7822756001C1AC412B0A1751A8 /* ViewController+SnapKit.swift */; };
+		F3F21360ABE652EC89E85204A38B74CB /* NYAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5933AB8D721BEB1C0BF81AC64C259E /* NYAlertViewController.m */; };
 		F7DDAE900EED9ABD4430EAB819BBED9C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C98249A0D5A79ABE43A5E61D5242B25 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		194E74E5079DDA719CB69DFA1E11EF79 /* PBXContainerItemProxy */ = {
+		0BDCAE700992B074BFC823629051835F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 04B73EED130DBA17EE32766C72AECC6C;
+			remoteGlobalIDString = 9886DE6D32D54EB010EAF20276DB58A2;
 			remoteInfo = NYAlertViewController;
 		};
-		98D6551090615A8AD275D3354481DA5C /* PBXContainerItemProxy */ = {
+		CB64BC283AE817C104114E8394BF70FA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
@@ -52,26 +52,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		08872A01A5EA7776054153B330CF21DC /* NYAlertViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NYAlertViewController.h; path = NYAlertViewController/NYAlertViewController.h; sourceTree = "<group>"; };
 		0A76927A838B74013DE81260B84691E9 /* EdgeInsets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EdgeInsets.swift; path = Source/EdgeInsets.swift; sourceTree = "<group>"; };
-		0DF375AB9FEF5B734DBB8146037E0B1F /* NYAlertViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NYAlertViewController.h; path = NYAlertViewController/NYAlertViewController.h; sourceTree = "<group>"; };
+		129AC0AAA8347965D456131DF6256911 /* NYAlertViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NYAlertViewController-dummy.m"; sourceTree = "<group>"; };
+		1D4B683A91B24896A56E31B92BBB3EA1 /* NYAlertViewController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NYAlertViewController-umbrella.h"; sourceTree = "<group>"; };
 		20D05B27EAD9F1209D49F8D6E535BDC2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		23CCA6D80B79291B68FE615DE1FF6C66 /* NYAlertView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NYAlertView.m; path = NYAlertViewController/NYAlertView.m; sourceTree = "<group>"; };
+		2A4B1BCCE9B1A36A33D9EBC0BB5245D0 /* NYAlertViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NYAlertViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A5B605BCB86C161823225245B5EDBB7 /* View+SnapKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "View+SnapKit.swift"; path = "Source/View+SnapKit.swift"; sourceTree = "<group>"; };
 		2B0270ACC0A1AAAC0088467BF0131477 /* Constraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constraint.swift; path = Source/Constraint.swift; sourceTree = "<group>"; };
 		2B36F935A6C934B8E6E760066DF67D80 /* NYAlertViewController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NYAlertViewController.xcconfig; sourceTree = "<group>"; };
+		2BCBC9BEF227D566E8E302D0F16C14B2 /* NYAlertView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NYAlertView.h; path = NYAlertViewController/NYAlertView.h; sourceTree = "<group>"; };
 		3BDA875EC723B09DA21A7079D19C7D02 /* Pods-LockMinder-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LockMinder-umbrella.h"; sourceTree = "<group>"; };
 		3DBD3F68F708AA6E6115CA4B4FCA0258 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		40373E49951C0CDA43D68A4D36DE9EFA /* NYAlertViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NYAlertViewController-prefix.pch"; sourceTree = "<group>"; };
 		413D4C68BCDED964834146EFB422C3B3 /* SnapKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-umbrella.h"; sourceTree = "<group>"; };
 		4BC6480246D918257F7671A3B9415A58 /* SnapKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SnapKit.modulemap; sourceTree = "<group>"; };
-		4EA5AAFED2CA78DAD1C70EBDC49CE265 /* NYAlertViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NYAlertViewController-dummy.m"; sourceTree = "<group>"; };
-		56302B5AF15B59D1D5D56CA83957A8BD /* NYAlertView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NYAlertView.m; path = NYAlertViewController/NYAlertView.m; sourceTree = "<group>"; };
 		57629D3B06421ECCE3D64B80BB43DD2C /* NYAlertViewController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = NYAlertViewController.modulemap; sourceTree = "<group>"; };
 		611A48441084B161E7E6C19BE1F148EE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6936FFF1503A99F9E8F2FF60633067D4 /* NYAlertViewController-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "NYAlertViewController-Private.xcconfig"; sourceTree = "<group>"; };
 		6C98249A0D5A79ABE43A5E61D5242B25 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		6DCF007A22E91D2772DCEE9FA97DE861 /* SnapKit-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "SnapKit-Private.xcconfig"; sourceTree = "<group>"; };
 		6E13811703F4D15A85A9D2260B00A6A8 /* SnapKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SnapKit.swift; path = Source/SnapKit.swift; sourceTree = "<group>"; };
-		752515856922BA4861B15F2577191C4C /* NYAlertViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NYAlertViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		799F700E0350C1622AF654FBAC56DC3E /* ConstraintAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintAttributes.swift; path = Source/ConstraintAttributes.swift; sourceTree = "<group>"; };
 		79D7963F02D79E7AF9280CB2426B041D /* ConstraintRelation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelation.swift; path = Source/ConstraintRelation.swift; sourceTree = "<group>"; };
 		8A165C33AF1AEDDE89A8B1A07B27658B /* Pods-LockMinder-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LockMinder-frameworks.sh"; sourceTree = "<group>"; };
@@ -79,7 +80,7 @@
 		908692EC9BB50AD550977A9B7C220183 /* Pods-LockMinder-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LockMinder-acknowledgements.markdown"; sourceTree = "<group>"; };
 		99E168D3914AF48A82F286281EB2169D /* Pods-LockMinder-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LockMinder-resources.sh"; sourceTree = "<group>"; };
 		9B838EF45CF7A769ACCD85BB88E7B994 /* Pods-LockMinder-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LockMinder-dummy.m"; sourceTree = "<group>"; };
-		9BE1250A7D30DA551317EF5A45951F20 /* NYAlertView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NYAlertView.h; path = NYAlertViewController/NYAlertView.h; sourceTree = "<group>"; };
+		9CFA036676648BD34745E39B8D863678 /* NYAlertViewController-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "NYAlertViewController-Private.xcconfig"; sourceTree = "<group>"; };
 		A00F6A7822756001C1AC412B0A1751A8 /* ViewController+SnapKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ViewController+SnapKit.swift"; path = "Source/ViewController+SnapKit.swift"; sourceTree = "<group>"; };
 		A5437272D319C6DE9608D4E6B203C562 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5A8D82DB78760A7547F19160E46DCA4 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reveal.framework; path = "Reveal-Framework-1.5.1/Reveal.framework"; sourceTree = "<group>"; };
@@ -95,12 +96,19 @@
 		E742B8499F32BDC1D20976F131C56BE5 /* Pods-LockMinder-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LockMinder-acknowledgements.plist"; sourceTree = "<group>"; };
 		EC1BB9B2BB64A9FBBEBE5E160CECA6CC /* Pods-LockMinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LockMinder.release.xcconfig"; sourceTree = "<group>"; };
 		EDC6726B2AA1DAAC6F94E1FF507AE34F /* ConstraintDescription.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDescription.swift; path = Source/ConstraintDescription.swift; sourceTree = "<group>"; };
-		EF3DB2A880A320949DE01199A86D6B05 /* NYAlertViewController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NYAlertViewController-umbrella.h"; sourceTree = "<group>"; };
-		F6D8F01021DD4924D2CDAE974FC25408 /* NYAlertViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NYAlertViewController.m; path = NYAlertViewController/NYAlertViewController.m; sourceTree = "<group>"; };
 		F79B446D865CE125AC740FDABBA29405 /* ConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintItem.swift; path = Source/ConstraintItem.swift; sourceTree = "<group>"; };
+		FC5933AB8D721BEB1C0BF81AC64C259E /* NYAlertViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NYAlertViewController.m; path = NYAlertViewController/NYAlertViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		126D649C54493C7DF61C4690EB3447D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D71623F5977FF8A1787D5E62B853B07E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		50CF6B736D50128C4E5CFE912E79B7A1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -114,14 +122,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				34ABF37525C632CAD2173C0C9EB7AFA2 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EEFE6BC2C900C75DF53D336BDD538825 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1B9E184B27E4759F86560C96FE7ED6A3 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,10 +166,10 @@
 		815BA9AEA183F32F60D586094CA43A5D /* NYAlertViewController */ = {
 			isa = PBXGroup;
 			children = (
-				9BE1250A7D30DA551317EF5A45951F20 /* NYAlertView.h */,
-				56302B5AF15B59D1D5D56CA83957A8BD /* NYAlertView.m */,
-				0DF375AB9FEF5B734DBB8146037E0B1F /* NYAlertViewController.h */,
-				F6D8F01021DD4924D2CDAE974FC25408 /* NYAlertViewController.m */,
+				2BCBC9BEF227D566E8E302D0F16C14B2 /* NYAlertView.h */,
+				23CCA6D80B79291B68FE615DE1FF6C66 /* NYAlertView.m */,
+				08872A01A5EA7776054153B330CF21DC /* NYAlertViewController.h */,
+				FC5933AB8D721BEB1C0BF81AC64C259E /* NYAlertViewController.m */,
 				FBCCCC981F9574A0A8CB85F122CA5220 /* Support Files */,
 			);
 			path = NYAlertViewController;
@@ -231,7 +231,7 @@
 		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				752515856922BA4861B15F2577191C4C /* NYAlertViewController.framework */,
+				2A4B1BCCE9B1A36A33D9EBC0BB5245D0 /* NYAlertViewController.framework */,
 				C43581921D7C5EDD230D983AC976A1DD /* Pods_LockMinder.framework */,
 				3DBD3F68F708AA6E6115CA4B4FCA0258 /* SnapKit.framework */,
 			);
@@ -270,10 +270,10 @@
 				20D05B27EAD9F1209D49F8D6E535BDC2 /* Info.plist */,
 				57629D3B06421ECCE3D64B80BB43DD2C /* NYAlertViewController.modulemap */,
 				2B36F935A6C934B8E6E760066DF67D80 /* NYAlertViewController.xcconfig */,
-				6936FFF1503A99F9E8F2FF60633067D4 /* NYAlertViewController-Private.xcconfig */,
-				4EA5AAFED2CA78DAD1C70EBDC49CE265 /* NYAlertViewController-dummy.m */,
+				9CFA036676648BD34745E39B8D863678 /* NYAlertViewController-Private.xcconfig */,
+				129AC0AAA8347965D456131DF6256911 /* NYAlertViewController-dummy.m */,
 				40373E49951C0CDA43D68A4D36DE9EFA /* NYAlertViewController-prefix.pch */,
-				EF3DB2A880A320949DE01199A86D6B05 /* NYAlertViewController-umbrella.h */,
+				1D4B683A91B24896A56E31B92BBB3EA1 /* NYAlertViewController-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/NYAlertViewController";
@@ -298,36 +298,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BAB5E344D14388709E52BEE662641D6F /* Headers */ = {
+		7781D174F8797DC95E9F8409A7A16296 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F2CDD78A4FBF0039877A79F00D56389 /* NYAlertView.h in Headers */,
-				A8D44FA8C6E8D2DEAFC93122F1ECA7A4 /* NYAlertViewController-umbrella.h in Headers */,
-				14499D71364F63D86C57F7326BE02149 /* NYAlertViewController.h in Headers */,
+				D56C496BB52ACE929ED5B8DC6105AFD7 /* NYAlertView.h in Headers */,
+				781646C92C63AB77D4DC3954E8368198 /* NYAlertViewController-umbrella.h in Headers */,
+				E35570E18EF111E3AF35233F5C329A4B /* NYAlertViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		04B73EED130DBA17EE32766C72AECC6C /* NYAlertViewController */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BA0175B65169E22F11C366674E06E0CE /* Build configuration list for PBXNativeTarget "NYAlertViewController" */;
-			buildPhases = (
-				0582DE81545A00B8F4664B2618AAB079 /* Sources */,
-				EEFE6BC2C900C75DF53D336BDD538825 /* Frameworks */,
-				BAB5E344D14388709E52BEE662641D6F /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = NYAlertViewController;
-			productName = NYAlertViewController;
-			productReference = 752515856922BA4861B15F2577191C4C /* NYAlertViewController.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		104EAC229EFAD431BF1856C208D128F0 /* Pods-LockMinder */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A8181325A19849443683E7DCBD074445 /* Build configuration list for PBXNativeTarget "Pods-LockMinder" */;
@@ -339,8 +322,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				3A9059F50F07F484B8A2B4B848045D7F /* PBXTargetDependency */,
-				9D6BF5089E19FF7944E7F80EA28F28F1 /* PBXTargetDependency */,
+				5E94118511548285D23A4ABB6EE4B27B /* PBXTargetDependency */,
+				BBA9B6833950B446D9D283067F960BA0 /* PBXTargetDependency */,
 			);
 			name = "Pods-LockMinder";
 			productName = "Pods-LockMinder";
@@ -364,6 +347,23 @@
 			productReference = 3DBD3F68F708AA6E6115CA4B4FCA0258 /* SnapKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		9886DE6D32D54EB010EAF20276DB58A2 /* NYAlertViewController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 459004D8A807AFC0A73631FA497B0D63 /* Build configuration list for PBXNativeTarget "NYAlertViewController" */;
+			buildPhases = (
+				48392F3CCDF68B49D2AAD34370FEF012 /* Sources */,
+				126D649C54493C7DF61C4690EB3447D8 /* Frameworks */,
+				7781D174F8797DC95E9F8409A7A16296 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NYAlertViewController;
+			productName = NYAlertViewController;
+			productReference = 2A4B1BCCE9B1A36A33D9EBC0BB5245D0 /* NYAlertViewController.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -385,7 +385,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				04B73EED130DBA17EE32766C72AECC6C /* NYAlertViewController */,
+				9886DE6D32D54EB010EAF20276DB58A2 /* NYAlertViewController */,
 				104EAC229EFAD431BF1856C208D128F0 /* Pods-LockMinder */,
 				4EDA452517A913B556C7860F490D5FD3 /* SnapKit */,
 			);
@@ -393,13 +393,13 @@
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0582DE81545A00B8F4664B2618AAB079 /* Sources */ = {
+		48392F3CCDF68B49D2AAD34370FEF012 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BCE7FD1C117F32DCD76A23C52FAD3B2 /* NYAlertView.m in Sources */,
-				47AEB98408D108EEA43828872E9276F3 /* NYAlertViewController-dummy.m in Sources */,
-				2EA63FEE0804FFDCE39E04B9336905E3 /* NYAlertViewController.m in Sources */,
+				3F0F6A2E91D11640EE0626943EED5C01 /* NYAlertView.m in Sources */,
+				BD1D045EB7113EFF00D65C47499B5C62 /* NYAlertViewController-dummy.m in Sources */,
+				F3F21360ABE652EC89E85204A38B74CB /* NYAlertViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,17 +434,17 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3A9059F50F07F484B8A2B4B848045D7F /* PBXTargetDependency */ = {
+		5E94118511548285D23A4ABB6EE4B27B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = NYAlertViewController;
-			target = 04B73EED130DBA17EE32766C72AECC6C /* NYAlertViewController */;
-			targetProxy = 194E74E5079DDA719CB69DFA1E11EF79 /* PBXContainerItemProxy */;
+			target = 9886DE6D32D54EB010EAF20276DB58A2 /* NYAlertViewController */;
+			targetProxy = 0BDCAE700992B074BFC823629051835F /* PBXContainerItemProxy */;
 		};
-		9D6BF5089E19FF7944E7F80EA28F28F1 /* PBXTargetDependency */ = {
+		BBA9B6833950B446D9D283067F960BA0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SnapKit;
 			target = 4EDA452517A913B556C7860F490D5FD3 /* SnapKit */;
-			targetProxy = 98D6551090615A8AD275D3354481DA5C /* PBXContainerItemProxy */;
+			targetProxy = CB64BC283AE817C104114E8394BF70FA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -507,9 +507,9 @@
 			};
 			name = Debug;
 		};
-		9855329539662BBCB165364AACD94B4D /* Release */ = {
+		81A767A55AC8FEACF382325694D012D2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6936FFF1503A99F9E8F2FF60633067D4 /* NYAlertViewController-Private.xcconfig */;
+			baseConfigurationReference = 9CFA036676648BD34745E39B8D863678 /* NYAlertViewController-Private.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1.0.3;
@@ -573,6 +573,33 @@
 			};
 			name = Debug;
 		};
+		ADDBCACAD39D6FF93D33A6871EC528DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CFA036676648BD34745E39B8D863678 /* NYAlertViewController-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1.0.3;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/NYAlertViewController/NYAlertViewController-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/NYAlertViewController/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/NYAlertViewController/NYAlertViewController.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = NYAlertViewController;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		B2ACBA2C34B966AD5073E263EC66B5C9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EC1BB9B2BB64A9FBBEBE5E160CECA6CC /* Pods-LockMinder.release.xcconfig */;
@@ -629,33 +656,6 @@
 			};
 			name = Release;
 		};
-		F5AB1CA8D37807BF6C5F71B31497CE20 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6936FFF1503A99F9E8F2FF60633067D4 /* NYAlertViewController-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1.0.3;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/NYAlertViewController/NYAlertViewController-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/NYAlertViewController/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/NYAlertViewController/NYAlertViewController.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = NYAlertViewController;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		FB45FFD90572718D82AB9092B750F0CA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -711,20 +711,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		459004D8A807AFC0A73631FA497B0D63 /* Build configuration list for PBXNativeTarget "NYAlertViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADDBCACAD39D6FF93D33A6871EC528DF /* Debug */,
+				81A767A55AC8FEACF382325694D012D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A8181325A19849443683E7DCBD074445 /* Build configuration list for PBXNativeTarget "Pods-LockMinder" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				07A99BC49305DE2B816E817765E26A09 /* Debug */,
 				B2ACBA2C34B966AD5073E263EC66B5C9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		BA0175B65169E22F11C366674E06E0CE /* Build configuration list for PBXNativeTarget "NYAlertViewController" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F5AB1CA8D37807BF6C5F71B31497CE20 /* Debug */,
-				9855329539662BBCB165364AACD94B4D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
