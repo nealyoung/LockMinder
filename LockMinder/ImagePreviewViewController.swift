@@ -22,11 +22,11 @@ class ImagePreviewViewController: UIViewController {
         super.viewDidLoad()
         
         imageView = UIImageView(image: image)
-        imageView.setTranslatesAutoresizingMaskIntoConstraints(false)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(imageView)
         
         self.cancelButton = UIButton()
-        self.cancelButton.setTranslatesAutoresizingMaskIntoConstraints(false)
+        self.cancelButton.translatesAutoresizingMaskIntoConstraints = false
         self.cancelButton.backgroundColor = UIColor(white: 0.97, alpha: 0.65)
         self.cancelButton.titleLabel?.font = UIFont.mediumApplicationFont(19.0)
         self.cancelButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
@@ -35,7 +35,7 @@ class ImagePreviewViewController: UIViewController {
         self.view.addSubview(self.cancelButton)
         
         self.saveButton = UIButton()
-        self.saveButton.setTranslatesAutoresizingMaskIntoConstraints(false)
+        self.saveButton.translatesAutoresizingMaskIntoConstraints = false
         self.saveButton.backgroundColor = UIColor(white: 0.97, alpha: 0.65)
         self.saveButton.titleLabel?.font = UIFont.mediumApplicationFont(19.0)
         self.saveButton.setTitleColor(UIColor.blackColor(), forState: .Normal)

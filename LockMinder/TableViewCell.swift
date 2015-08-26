@@ -9,7 +9,7 @@
 import Foundation
 
 class TableViewCell: UITableViewCell {
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
         self.commonInit()

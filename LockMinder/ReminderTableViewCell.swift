@@ -18,7 +18,7 @@ class ReminderTableViewCell: UITableViewCell {
         self.commonInit()
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
         self.commonInit()
@@ -28,12 +28,12 @@ class ReminderTableViewCell: UITableViewCell {
         self.selectionStyle = .None
         
         self.checkmarkView = CheckmarkView()
-        self.checkmarkView.setTranslatesAutoresizingMaskIntoConstraints(false)
+        self.checkmarkView.translatesAutoresizingMaskIntoConstraints = false
         self.contentView.addSubview(self.checkmarkView)
         
         self.reminderLabel = UILabel()
         self.reminderLabel.font = UIFont.applicationFont(17.0)
-        self.reminderLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
+        self.reminderLabel.translatesAutoresizingMaskIntoConstraints = false
         self.contentView.addSubview(self.reminderLabel)
         
         self.checkmarkView.snp_makeConstraints { (make) -> Void in

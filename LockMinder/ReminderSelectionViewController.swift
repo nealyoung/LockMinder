@@ -30,7 +30,7 @@ class ReminderSelectionViewController: UIViewController, CalendarSelectionViewCo
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         reminders = []
         selectedReminders = []
         
@@ -44,7 +44,7 @@ class ReminderSelectionViewController: UIViewController, CalendarSelectionViewCo
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        if let indexPath = self.tableView.indexPathForSelectedRow() {
+        if let indexPath = self.tableView.indexPathForSelectedRow {
             self.tableView.deselectRowAtIndexPath(indexPath, animated: animated)
         }
     }
@@ -55,25 +55,25 @@ class ReminderSelectionViewController: UIViewController, CalendarSelectionViewCo
         self.title = NSLocalizedString("LockMinder", comment: "")
     
         self.tableView = UITableView(frame: CGRectZero, style: .Grouped)
-        self.tableView.setTranslatesAutoresizingMaskIntoConstraints(false)
+        self.tableView.translatesAutoresizingMaskIntoConstraints = false
         self.tableView.dataSource = self;
         self.tableView.delegate = self;
         self.tableView.registerClass(TableViewCell.self, forCellReuseIdentifier: TableViewCellIdentifier)
         self.tableView.registerClass(ReminderTableViewCell.self, forCellReuseIdentifier: ReminderCellIdentifier)
         self.view.addSubview(self.tableView)
         
-        var previewButtonBackgroundView = UIView()
-        previewButtonBackgroundView.setTranslatesAutoresizingMaskIntoConstraints(false)
+        let previewButtonBackgroundView = UIView()
+        previewButtonBackgroundView.translatesAutoresizingMaskIntoConstraints = false
         previewButtonBackgroundView.backgroundColor = UIColor(white: 0.96, alpha: 1.0)
         self.view.addSubview(previewButtonBackgroundView)
         
-        var previewButtonBackgroundTopBorderView = UIView()
-        previewButtonBackgroundTopBorderView.setTranslatesAutoresizingMaskIntoConstraints(false)
+        let previewButtonBackgroundTopBorderView = UIView()
+        previewButtonBackgroundTopBorderView.translatesAutoresizingMaskIntoConstraints = false
         previewButtonBackgroundTopBorderView.backgroundColor = UIColor(white: 0.7, alpha: 1.0)
         previewButtonBackgroundView.addSubview(previewButtonBackgroundTopBorderView)
         
         self.previewButton = NYRoundRectButton()
-        self.previewButton.setTranslatesAutoresizingMaskIntoConstraints(false)
+        self.previewButton.translatesAutoresizingMaskIntoConstraints = false
         self.previewButton.addTarget(self, action: "previewButtonPressed", forControlEvents: .TouchUpInside)
         self.previewButton.titleLabel?.font = UIFont.mediumApplicationFont(18.0)
         self.previewButton.setTitle(NSLocalizedString("Preview Wallpaper", comment: ""), forState: .Normal)
@@ -141,33 +141,37 @@ class ReminderSelectionViewController: UIViewController, CalendarSelectionViewCo
     }
     
     private func createSampleReminders() {
-        var completedRemindersPredicate = self.eventStore.predicateForIncompleteRemindersWithDueDateStarting(nil, ending: nil, calendars: [self.selectedCalendar])
-        self.eventStore.fetchRemindersMatchingPredicate(completedRemindersPredicate) { (reminders: [AnyObject]!) -> Void in
-            if let reminders = reminders as? [EKReminder] {
-                for reminder in reminders {
-//                    self.eventStore.removeReminder(reminder, commit: true, error: nil)
+        let completedRemindersPredicate = self.eventStore.predicateForIncompleteRemindersWithDueDateStarting(nil, ending: nil, calendars: [self.selectedCalendar])
+            self.eventStore.fetchRemindersMatchingPredicate(completedRemindersPredicate) { (reminders: [EKReminder]?) -> Void in
+                if let reminders = reminders {
+                    for reminder in reminders {
+//                        //                    self.eventStore.removeReminder(reminder, commit: true, error: nil)
+                    }
                 }
-            }
-            
-            let reminder1 = EKReminder(eventStore: self.eventStore)
-            reminder1.title = "Buy milk"
-            self.eventStore.saveReminder(reminder1, commit: true, error: nil)
-            
-            let reminder2 = EKReminder(eventStore: self.eventStore)
-            reminder2.title = "Pay water bill"
-            self.eventStore.saveReminder(reminder2, commit: true, error: nil)
-            
-            let reminder3 = EKReminder(eventStore: self.eventStore)
-            reminder3.title = "Pick up dry cleaning"
-            self.eventStore.saveReminder(reminder3, commit: true, error: nil)
-            
-            let reminder4 = EKReminder(eventStore: self.eventStore)
-            reminder4.title = "Finish TPS reports"
-            self.eventStore.saveReminder(reminder3, commit: true, error: nil)
-            
-            self.reminders = [reminder1, reminder2, reminder3, reminder4]
-            
-            self.tableView.reloadData()
+    
+                do {
+                    let reminder1 = EKReminder(eventStore: self.eventStore)
+                    reminder1.title = "Buy milk"
+                    try self.eventStore.saveReminder(reminder1, commit: true)
+                    
+                    let reminder2 = EKReminder(eventStore: self.eventStore)
+                    reminder2.title = "Pay water bill"
+                    try self.eventStore.saveReminder(reminder2, commit: true)
+                    
+                    let reminder3 = EKReminder(eventStore: self.eventStore)
+                    reminder3.title = "Pick up dry cleaning"
+                    try self.eventStore.saveReminder(reminder3, commit: true)
+                    
+                    let reminder4 = EKReminder(eventStore: self.eventStore)
+                    reminder4.title = "Finish TPS reports"
+                    try self.eventStore.saveReminder(reminder3, commit: true)
+                    
+                    self.reminders = [reminder1, reminder2, reminder3, reminder4]
+                    
+                    self.tableView.reloadData()
+                } catch {
+                    
+                }
         }
     }
     
@@ -237,7 +241,7 @@ class ReminderSelectionViewController: UIViewController, CalendarSelectionViewCo
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         switch (indexPath.section) {
         case 0:
-            let cell = tableView.dequeueReusableCellWithIdentifier(TableViewCellIdentifier, forIndexPath: indexPath) as! UITableViewCell;
+            let cell = tableView.dequeueReusableCellWithIdentifier(TableViewCellIdentifier, forIndexPath: indexPath)
             
             cell.accessoryType = .DisclosureIndicator
             cell.textLabel?.text = NSLocalizedString("Reminder List", comment: "")

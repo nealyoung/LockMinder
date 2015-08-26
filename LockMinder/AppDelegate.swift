@@ -19,8 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         customizeAppearance()
         
-        var reminderSelectionViewController = ReminderSelectionViewController()
-        var navigationController = UINavigationController(rootViewController: reminderSelectionViewController)
+        let reminderSelectionViewController = ReminderSelectionViewController()
+        let navigationController = UINavigationController(rootViewController: reminderSelectionViewController)
         
         self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible();

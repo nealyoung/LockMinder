@@ -22,7 +22,7 @@ class ImageGenerator {
         let scale = UIScreen.mainScreen().scale
         
         UIGraphicsBeginImageContextWithOptions(screenBounds.size, true, scale)
-        let ctx = UIGraphicsGetCurrentContext()
+        guard let ctx = UIGraphicsGetCurrentContext() else { return UIImage() }
         
         let horizontalImageScale = screenBounds.size.width / backgroundImage.size.width
         let verticalImageScale = screenBounds.size.height / backgroundImage.size.height
@@ -87,7 +87,7 @@ class ImageGenerator {
         
         var yPosition: CGFloat = 0.0
         
-        for (index, reminder) in enumerate(reminders) {
+        for (index, reminder) in reminders.enumerate() {
             // Compute the frame of the bullet point
             let itemBulletRect = CGRect(
                 x: CGRectGetMinX(listBackgroundRect) + ListItemXInset,
@@ -129,10 +129,10 @@ class ImageGenerator {
             )
         }
         
-        let img = CGBitmapContextCreateImage(ctx);
+        guard let img = CGBitmapContextCreateImage(ctx) else { return UIImage() }
         UIGraphicsEndImageContext();
         
-        let wallpaperImage = UIImage(CGImage: img)!;
+        let wallpaperImage = UIImage(CGImage: img);
         return wallpaperImage;
     }
     
@@ -148,6 +148,6 @@ class ImageGenerator {
         let startPoint = CGPointMake(0.0, 0.0)
         let endPoint = CGPointMake(0.0, CGRectGetMaxY(screenBounds))
         
-        CGContextDrawLinearGradient(context, gradient, startPoint, endPoint, 0);
+        CGContextDrawLinearGradient(context, gradient, startPoint, endPoint, CGGradientDrawingOptions())
     }
 }

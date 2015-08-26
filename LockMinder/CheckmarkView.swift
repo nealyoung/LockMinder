@@ -26,7 +26,7 @@ class CheckmarkView: UIView {
         self.clipsToBounds = false
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         self.selected = false
         
         super.init(coder: aDecoder)
