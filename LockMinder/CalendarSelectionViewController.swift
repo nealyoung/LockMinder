@@ -18,7 +18,11 @@ class CalendarSelectionViewController: UITableViewController {
     
     var delegate: CalendarSelectionViewControllerDelegate?
     var selectedCalendar: EKCalendar?
-    var calendars: [EKCalendar] = []
+    var calendars: [EKCalendar] = [] {
+        didSet {
+            calendars.sort { (a: EKCalendar, b: EKCalendar) -> Bool in a.title < b.title }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

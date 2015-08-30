@@ -12,7 +12,6 @@
 		0E1DD5FD1B7469A40028095E /* ReminderSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1DD5FC1B7469A40028095E /* ReminderSelectionViewController.swift */; };
 		0E1DD6021B7469A40028095E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E1DD6011B7469A40028095E /* Assets.xcassets */; };
 		0E1DD6101B7469A40028095E /* LockMinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1DD60F1B7469A40028095E /* LockMinderTests.swift */; };
-		0E1DD61B1B7469A40028095E /* LockMinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1DD61A1B7469A40028095E /* LockMinderUITests.swift */; };
 		0E71F58A1B748C89009060A0 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E71F5891B748C88009060A0 /* EventKit.framework */; };
 		0E71F58C1B749330009060A0 /* CheckmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71F58B1B749330009060A0 /* CheckmarkView.swift */; };
 		0E71F58E1B74934F009060A0 /* ReminderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71F58D1B74934F009060A0 /* ReminderTableViewCell.swift */; };
@@ -39,13 +38,6 @@
 			remoteGlobalIDString = 0E1DD5F61B7469A40028095E;
 			remoteInfo = LockMinder;
 		};
-		0E1DD6171B7469A40028095E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0E1DD5EF1B7469A40028095E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0E1DD5F61B7469A40028095E;
-			remoteInfo = LockMinder;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -58,7 +50,6 @@
 		0E1DD60B1B7469A40028095E /* LockMinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LockMinderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E1DD60F1B7469A40028095E /* LockMinderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockMinderTests.swift; sourceTree = "<group>"; };
 		0E1DD6111B7469A40028095E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0E1DD6161B7469A40028095E /* LockMinderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LockMinderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E1DD61A1B7469A40028095E /* LockMinderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockMinderUITests.swift; sourceTree = "<group>"; };
 		0E1DD61C1B7469A40028095E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E71F5891B748C88009060A0 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
@@ -102,13 +93,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0E1DD6131B7469A40028095E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -129,7 +113,6 @@
 			children = (
 				0E1DD5F71B7469A40028095E /* LockMinder.app */,
 				0E1DD60B1B7469A40028095E /* LockMinderTests.xctest */,
-				0E1DD6161B7469A40028095E /* LockMinderUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -280,24 +263,6 @@
 			productReference = 0E1DD60B1B7469A40028095E /* LockMinderTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		0E1DD6151B7469A40028095E /* LockMinderUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0E1DD6251B7469A40028095E /* Build configuration list for PBXNativeTarget "LockMinderUITests" */;
-			buildPhases = (
-				0E1DD6121B7469A40028095E /* Sources */,
-				0E1DD6131B7469A40028095E /* Frameworks */,
-				0E1DD6141B7469A40028095E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				0E1DD6181B7469A40028095E /* PBXTargetDependency */,
-			);
-			name = LockMinderUITests;
-			productName = LockMinderUITests;
-			productReference = 0E1DD6161B7469A40028095E /* LockMinderUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -312,10 +277,6 @@
 						DevelopmentTeam = HFG3GB6CJM;
 					};
 					0E1DD60A1B7469A40028095E = {
-						CreatedOnToolsVersion = 7.0;
-						TestTargetID = 0E1DD5F61B7469A40028095E;
-					};
-					0E1DD6151B7469A40028095E = {
 						CreatedOnToolsVersion = 7.0;
 						TestTargetID = 0E1DD5F61B7469A40028095E;
 					};
@@ -336,7 +297,6 @@
 			targets = (
 				0E1DD5F61B7469A40028095E /* LockMinder */,
 				0E1DD60A1B7469A40028095E /* LockMinderTests */,
-				0E1DD6151B7469A40028095E /* LockMinderUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -355,13 +315,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		0E1DD6091B7469A40028095E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0E1DD6141B7469A40028095E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -446,14 +399,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0E1DD6121B7469A40028095E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0E1DD61B1B7469A40028095E /* LockMinderUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -461,11 +406,6 @@
 			isa = PBXTargetDependency;
 			target = 0E1DD5F61B7469A40028095E /* LockMinder */;
 			targetProxy = 0E1DD60C1B7469A40028095E /* PBXContainerItemProxy */;
-		};
-		0E1DD6181B7469A40028095E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0E1DD5F61B7469A40028095E /* LockMinder */;
-			targetProxy = 0E1DD6171B7469A40028095E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -644,32 +584,6 @@
 			};
 			name = Release;
 		};
-		0E1DD6261B7469A40028095E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = LockMinderUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.nealonyoung.LockMinderUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = LockMinder;
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
-		};
-		0E1DD6271B7469A40028095E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = LockMinderUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.nealonyoung.LockMinderUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = LockMinder;
-				USES_XCTRUNNER = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -696,15 +610,6 @@
 			buildConfigurations = (
 				0E1DD6231B7469A40028095E /* Debug */,
 				0E1DD6241B7469A40028095E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		0E1DD6251B7469A40028095E /* Build configuration list for PBXNativeTarget "LockMinderUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0E1DD6261B7469A40028095E /* Debug */,
-				0E1DD6271B7469A40028095E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

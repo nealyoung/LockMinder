@@ -138,9 +138,7 @@ class ImageGenerator {
     
     private class func drawGradientBackground(context: CGContextRef, startColor: UIColor, endColor: UIColor) {
         let colors = [startColor.CGColor, endColor.CGColor];
-        
         let colorspace = CGColorSpaceCreateDeviceRGB();
-        
         let gradient = CGGradientCreateWithColors(colorspace, colors, nil);
         
         let screenBounds = UIScreen.mainScreen().bounds;
