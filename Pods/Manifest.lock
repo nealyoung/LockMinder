@@ -6,7 +6,17 @@ PODS:
 DEPENDENCIES:
   - NYAlertViewController
   - Reveal-iOS-SDK
-  - SnapKit
+  - SnapKit (from `git@github.com:SnapKit/SnapKit.git`, branch `swift-2.0`)
+
+EXTERNAL SOURCES:
+  SnapKit:
+    :branch: swift-2.0
+    :git: git@github.com:SnapKit/SnapKit.git
+
+CHECKOUT OPTIONS:
+  SnapKit:
+    :commit: 4f19419528baa3dfaca20e26fea2be410ddc79e2
+    :git: git@github.com:SnapKit/SnapKit.git
 
 SPEC CHECKSUMS:
   NYAlertViewController: e14a8dd6d6f0bcc73537569b953e958205de58ff

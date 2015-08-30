@@ -23,17 +23,17 @@ class ReminderLoader {
     }
     
     class func getReminderCalendars() -> [EKCalendar] {
-        return eventStore.calendarsForEntityType(EKEntityTypeReminder) as! [EKCalendar]
+        return eventStore.calendarsForEntityType(.Reminder)
     }
     
-    class func importReminders(calendar: EKCalendar, completion: (result: Optional<[EKReminder]>)->Void) {
-        eventStore.requestAccessToEntityType(EKEntityTypeReminder) { (granted: Bool, error: NSError!) -> Void in
+    class func importReminders(calendar: EKCalendar, completion: (result: [EKReminder]?)->Void) {
+        eventStore.requestAccessToEntityType(.Reminder) { (granted: Bool, error: NSError?) -> Void in
             if (!granted || error != nil) {
                 completion(result: nil)
             } else {
-                var completedRemindersPredicate = self.eventStore.predicateForIncompleteRemindersWithDueDateStarting(nil, ending: nil, calendars: [calendar])
-                self.eventStore.fetchRemindersMatchingPredicate(completedRemindersPredicate) { (reminders: [AnyObject]!) -> Void in
-                    if let reminders = reminders as? [EKReminder] {
+                let completedRemindersPredicate = self.eventStore.predicateForIncompleteRemindersWithDueDateStarting(nil, ending: nil, calendars: [calendar])
+                self.eventStore.fetchRemindersMatchingPredicate(completedRemindersPredicate) { (reminders: [EKReminder]?) -> Void in
+                    if let reminders = reminders {
                         dispatch_async(dispatch_get_main_queue()) { () -> Void in
                             completion(result: reminders)
                         }

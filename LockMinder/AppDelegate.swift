@@ -18,8 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         customizeAppearance()
         
-        var reminderSelectionViewController = ReminderSelectionViewController()
-        var navigationController = UINavigationController(rootViewController: reminderSelectionViewController)
+        let reminderSelectionViewController = ReminderSelectionViewController()
+        let navigationController = UINavigationController(rootViewController: reminderSelectionViewController)
         
         self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible();
@@ -31,8 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.tintColor = UIColor.purpleApplicationColor()
         
         let navigationBarTitleTextAttributes = [
-            NSForegroundColorAttributeName: UIColor.whiteColor(),
-            NSFontAttributeName: UIFont.mediumApplicationFont(19.0)
+            NSForegroundColorAttributeName: UIColor.whiteColor()
         ]
         
         UINavigationBar.appearance().translucent = false
